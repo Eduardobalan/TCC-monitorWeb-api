@@ -3,11 +3,9 @@
 
 # Log file
 *.log
-target
 
 # BlueJ files
 *.ctxt
-.DS_Store
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -20,18 +18,18 @@ target
 *.tar.gz
 *.rar
 
-
-
-# Intellij configurações
-.idea
-
-#git
+# git
 !.gitkeep
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
 
+# Intellij configurações
+.idea
 
-
+# Outros
+.DS_Store
+target
+webmonitor-api.iml
 
