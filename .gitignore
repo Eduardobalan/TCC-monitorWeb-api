@@ -3,9 +3,11 @@
 
 # Log file
 *.log
+target
 
 # BlueJ files
 *.ctxt
+.DS_Store
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -18,5 +20,18 @@
 *.tar.gz
 *.rar
 
+
+
+# Intellij configurações
+.idea
+
+#git
+!.gitkeep
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+
+
+
+
