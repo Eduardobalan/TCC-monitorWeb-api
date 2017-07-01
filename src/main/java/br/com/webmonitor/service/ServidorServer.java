@@ -4,6 +4,7 @@ import br.com.webmonitor.business.ServidorBO;
 import br.com.webmonitor.entity.Servidor;
 import br.com.webmonitor.repository.ServidorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,9 +22,10 @@ public class ServidorServer {
     @Autowired
     private ServidorRepository servidorRepository;
 
+    //@Transactional
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public Servidor buscarPorId(@PathVariable("id") Long id){
-        return servidorRepository.findOne(id);
+    public Object buscarPorId(@PathVariable("id") Long id){
+        return servidorRepository.findById(id);
     }
 
     @RequestMapping(method = RequestMethod.GET)

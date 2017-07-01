@@ -11,9 +11,7 @@ import java.io.Serializable;
 @Entity
 //@DynamicUpdate
 @Table(name = "TB_DOMINIO" , schema = "public")
-public class Dominio implements Serializable {
-
-    private static final long serialVersionUID = 6663273309134361548L;
+public class Dominio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,8 +21,17 @@ public class Dominio implements Serializable {
     @Column(name = "domi_nome")
     private String nome;
 
-    @Column(name = "domi_obs")
-    private String obs;
+    @Column(name = "domi_observacao")
+    private String observacao;
+
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 
     public Long getId() {
         return id;
@@ -39,15 +46,15 @@ public class Dominio implements Serializable {
     }
 
     public String getObs() {
-        return obs;
+        return observacao;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setObs(String obs) {
-        this.obs = obs;
+    public void setObs(String observacao) {
+        this.observacao = observacao;
     }
 
 
