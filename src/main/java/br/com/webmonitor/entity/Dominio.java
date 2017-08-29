@@ -2,6 +2,7 @@ package br.com.webmonitor.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -24,15 +25,6 @@ public class Dominio {
     @Column(name = "domi_observacao")
     private String observacao;
 
-
-    public String getObservacao() {
-        return observacao;
-    }
-
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
-    }
-
     public Long getId() {
         return id;
     }
@@ -45,17 +37,15 @@ public class Dominio {
         return nome;
     }
 
-    public String getObs() {
-        return observacao;
-    }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setObs(String observacao) {
-        this.observacao = observacao;
+    public String getObservacao() {
+        return observacao;
     }
 
-
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 }

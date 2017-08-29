@@ -3,7 +3,6 @@ package br.com.webmonitor.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,12 +10,12 @@ import java.util.Date;
  */
 @Entity
 //@DynamicUpdate
-@Table(name = "tb_informacoes_memoria" , schema = "public")
-public class InformacoesMemoria{
+@Table(name = "tb_informacoes_db", schema = "public")
+public class InformacoesDB {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "memi_id")
+    @Column(name = "dbin_id")
     private Long id;
 
     @JsonIgnore
@@ -24,12 +23,15 @@ public class InformacoesMemoria{
     @JoinColumn(name = "serv_id")
     private Servidor servidor;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "memi_dthr_cadastro")
-    private Date dthr_cadastro;
+    @Column(name = "dbin_nome")
+    private String nome;
 
-    @Column(name = "memi_total")
-    private Long total;
+    @Column(name = "dbin_versao")
+    private String versao;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "dbin_dthr_cadastro")
+    private Date dthr_cadastro;
 
     public Long getId() {
         return id;
@@ -47,19 +49,27 @@ public class InformacoesMemoria{
         this.servidor = servidor;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getVersao() {
+        return versao;
+    }
+
+    public void setVersao(String versao) {
+        this.versao = versao;
+    }
+
     public Date getDthr_cadastro() {
         return dthr_cadastro;
     }
 
     public void setDthr_cadastro(Date dthr_cadastro) {
         this.dthr_cadastro = dthr_cadastro;
-    }
-
-    public Long getTotal() {
-        return total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
     }
 }
