@@ -1,7 +1,10 @@
 package br.com.webmonitor.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by Eduardo Balan on 07/07/2017.
@@ -15,12 +18,14 @@ public class MonitoramentoMemoria {
     @Column(name = "memm_id")
     private Long id;
 
-    //@Transient
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "memi_id")
     private InformacoesMemoria informacoesMemoria;
 
-    //memm_dthr_cadastro
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "memm_dthr_cadastro")
+    private Date dthr_cadastro;
 
     @Column(name = "memm_active")
     private Long active;
@@ -64,6 +69,14 @@ public class MonitoramentoMemoria {
 
     public void setMemfree(Long memfree) {
         this.memfree = memfree;
+    }
+
+    public Date getDthr_cadastro() {
+        return dthr_cadastro;
+    }
+
+    public void setDthr_cadastro(Date dthr_cadastro) {
+        this.dthr_cadastro = dthr_cadastro;
     }
 
     public Long getAvailabre() {

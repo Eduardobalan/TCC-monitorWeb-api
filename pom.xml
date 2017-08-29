@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.webmonitor</groupId>
-    <artifactId>webmonitor-api</artifactId>
+    <artifactId>TCC-MonitorWeb</artifactId>
     <version>0.0.1</version>
     <packaging>war</packaging>
 
-    <name>webmonitors-api</name>
+    <name>TCC-MonitorWeb</name>
     <description>API restful</description>
 
         <parent>
@@ -24,12 +24,12 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
+                <artifactId>spring-boot-starter-redis</artifactId>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>

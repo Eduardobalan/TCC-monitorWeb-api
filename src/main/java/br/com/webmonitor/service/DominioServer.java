@@ -3,6 +3,7 @@ package br.com.webmonitor.service;
 import br.com.webmonitor.business.DominioBO;
 import br.com.webmonitor.entity.Dominio;
 import br.com.webmonitor.repository.DominioRepository;
+import javafx.beans.binding.BooleanExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by Eduardo Balan on 27/06/2017.
  */
+@CrossOrigin(origins = "http://127.0.0.1:8080")
 @RestController
 @RequestMapping(path = "/dominio")
 public class DominioServer {
@@ -23,14 +25,14 @@ public class DominioServer {
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public Dominio buscarPorId(@PathVariable("id") Long id){
-        return dominioRepository.findOne(id);
+    public Object buscarPorId(@PathVariable("id") Long id){
+        return dominioRepository.findById(id);
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Dominio> buscar(){
-        List<Dominio> list = dominioRepository.findAll();
-        return list;
+
+        return dominioRepository.findAll();
     }
 
     @RequestMapping(method = RequestMethod.POST)
