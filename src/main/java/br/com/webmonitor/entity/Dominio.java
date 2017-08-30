@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 //@DynamicUpdate
 @Table(name = "TB_DOMINIO" , schema = "public")
-public class Dominio {
+public class Dominio{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

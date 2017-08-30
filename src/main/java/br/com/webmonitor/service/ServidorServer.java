@@ -3,52 +3,13 @@ package br.com.webmonitor.service;
 import br.com.webmonitor.business.ServidorBO;
 import br.com.webmonitor.entity.Servidor;
 import br.com.webmonitor.repository.ServidorRepository;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * Created by Eduardo Balan on 30/06/2017.
  */
 @RestController
 @RequestMapping(path = "/servidor")
-public class ServidorServer {
-
-    @Autowired
-    private ServidorBO servidorBO;
-    
-    @Autowired
-    private ServidorRepository servidorRepository;
-
-    //@Transactional
-    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public Object buscarPorId(@PathVariable("id") Long id){
-        return servidorRepository.findOne(id);
-        //ret.setDominio(null);
-        //return ret;
-    }
-
-    @RequestMapping(method = RequestMethod.GET)
-    public Object buscar(){
-        return servidorRepository.findAll();
-//        for (Servidor servidorRetorno : ret)
-//        {
-//            servidorRetorno.setDominio(null);
-//        }
-//        return ret;
-    }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public Object salvar(@RequestBody Servidor servidor) {
-        return servidorBO.salvar(servidor);
-    }
-
-    @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
-    public void excluir(@PathVariable("id") Long id) {
-        servidorBO.excluir(id);
-    }
+public class ServidorServer extends GenericService<Servidor, ServidorBO, ServidorRepository>{
 
 }

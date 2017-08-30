@@ -1,10 +1,7 @@
 package br.com.webmonitor.business;
 
 import br.com.webmonitor.entity.Dominio;
-import br.com.webmonitor.exception.GenericRuntimeException;
-import br.com.webmonitor.exception.SqlGenericRuntimeException;
 import br.com.webmonitor.repository.DominioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,24 +9,6 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class DominioBO {
+public class DominioBO  extends GenericBO<Dominio, DominioRepository> {
 
-    @Autowired
-    private DominioRepository dominioRepository ;
-
-    public Object salvar(Dominio dominio){
-        try{
-            return dominioRepository.save(dominio);
-        }catch (Exception e){
-            throw new SqlGenericRuntimeException(e);
-        }
-    }
-
-    public void excluir(long id){
-        try{
-            dominioRepository.delete(id);
-        }catch (Exception e){
-            throw new SqlGenericRuntimeException(e);
-        }
-    }
 }

@@ -1,15 +1,12 @@
 package br.com.webmonitor.repository;
 
-import br.com.webmonitor.entity.Dominio;
 import br.com.webmonitor.entity.Servidor;
+import br.com.webmonitor.entity.ServidorConfig;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
 
 /**
  * Created by Eduardo Balan on 28/06/2017.
  */
-public interface DominioRepository  extends JpaRepository<Dominio, Long> {
+public interface ServidorConfigRepository extends JpaRepository<ServidorConfig, Long> {
 
 }
