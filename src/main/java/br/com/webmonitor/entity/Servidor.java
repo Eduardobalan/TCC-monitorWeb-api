@@ -22,9 +22,6 @@ public class Servidor  {
     @Column(name = "serv_id")
     private Long id;
 
-    @Column(name = "domi_id")
-    private Long domi_id;
-
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "domi_id")
@@ -48,14 +45,6 @@ public class Servidor  {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getDomi_id() {
-        return domi_id;
-    }
-
-    public void setDomi_id(Long domi_id) {
-        this.domi_id = domi_id;
     }
 
     public Dominio getDominio() {
