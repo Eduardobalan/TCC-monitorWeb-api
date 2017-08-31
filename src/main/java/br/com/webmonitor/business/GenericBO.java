@@ -14,7 +14,7 @@ import javax.persistence.MappedSuperclass;
  * Created by Eduardo Balan on 29/08/2017.
  */
 @MappedSuperclass
-public class GenericBO <Entity extends InterfaceGenericEntity, Repository extends JpaRepository> {
+public class GenericBO <Entity, Repository extends JpaRepository> {
 
     @Autowired
     private Repository repository;

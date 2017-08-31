@@ -18,7 +18,6 @@ public class InformacoesCpu {
     @Column(name = "cpui_id")
     private Long id;
 
-    @JsonIgnore
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "serv_id", nullable = true)
     private Servidor servidor;

@@ -18,7 +18,6 @@ public class InformacoesDB {
     @Column(name = "dbin_id")
     private Long id;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "serv_id")
     private Servidor servidor;
