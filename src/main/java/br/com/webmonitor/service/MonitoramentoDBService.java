@@ -3,6 +3,8 @@ package br.com.webmonitor.service;
 import br.com.webmonitor.business.MonitoramentoDBBO;
 import br.com.webmonitor.entity.MonitoramentoDB;
 import br.com.webmonitor.repository.MonitoramentoDBRepository;
+import br.com.webmonitor.service.Generic.GenericService;
+import br.com.webmonitor.service.Generic.MonitoramentoGenericService;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -10,6 +12,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(path = "/monitoramento/db")
-public class MonitoramentoDBService extends GenericService<MonitoramentoDB, MonitoramentoDBBO, MonitoramentoDBRepository>{
+public class MonitoramentoDBService extends MonitoramentoGenericService<MonitoramentoDB, MonitoramentoDBBO, MonitoramentoDBRepository> {
 
 }

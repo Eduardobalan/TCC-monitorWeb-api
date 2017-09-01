@@ -18,7 +18,6 @@ public class MonitoramentoMemoria {
     @Column(name = "memm_id")
     private Long id;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "memi_id")
     private InformacoesMemoria informacoesMemoria;

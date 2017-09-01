@@ -17,7 +17,6 @@ public class MonitoramentoCpu {
     @Column(name = "cpum_id")
     private Long id;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cpui_id")
     private InformacoesCpu informacoesCpu;

@@ -3,6 +3,8 @@ package br.com.webmonitor.service;
 import br.com.webmonitor.business.MonitoramentoCpuBO;
 import br.com.webmonitor.entity.MonitoramentoCpu;
 import br.com.webmonitor.repository.MonitoramentoCpuRepository;
+import br.com.webmonitor.service.Generic.GenericService;
+import br.com.webmonitor.service.Generic.MonitoramentoGenericService;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -10,6 +12,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(path = "/monitoramento/cpu")
-public class MonitoramentoCpuService extends GenericService<MonitoramentoCpu, MonitoramentoCpuBO, MonitoramentoCpuRepository>{
+public class MonitoramentoCpuService extends MonitoramentoGenericService<MonitoramentoCpu, MonitoramentoCpuBO, MonitoramentoCpuRepository> {
 
 }

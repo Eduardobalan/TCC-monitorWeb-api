@@ -1,7 +1,6 @@
 package br.com.webmonitor.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.*;
@@ -22,11 +21,13 @@ public class Servidor  {
     @Column(name = "serv_id")
     private Long id;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+//    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//    @JsonIdentityReference(alwaysAsId = true)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "domi_id")
     private Dominio dominio;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "serv_dthr_cadastro")
     private Date dthr_cadastro;
 

@@ -3,6 +3,8 @@ package br.com.webmonitor.service;
 import br.com.webmonitor.business.InformacoesMemoriaBO;
 import br.com.webmonitor.entity.InformacoesMemoria;
 import br.com.webmonitor.repository.InformacoesMemoriaRepository;
+import br.com.webmonitor.service.Generic.GenericService;
+import br.com.webmonitor.service.Generic.InformacoesGenericService;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -10,6 +12,6 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping(path = "/informacoes/memoria")
-public class InformacoesMemoriaService extends GenericService<InformacoesMemoria, InformacoesMemoriaBO, InformacoesMemoriaRepository>{
+@RequestMapping(path = "/servidor/{idServidor}/informacoesmemoria")
+public class InformacoesMemoriaService extends InformacoesGenericService<InformacoesMemoria, InformacoesMemoriaBO, InformacoesMemoriaRepository> {
 }

@@ -3,6 +3,7 @@ package br.com.webmonitor.service;
 import br.com.webmonitor.business.ServidorBO;
 import br.com.webmonitor.entity.Servidor;
 import br.com.webmonitor.repository.ServidorRepository;
+import br.com.webmonitor.service.Generic.GenericService;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -10,6 +11,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(path = "/servidor")
-public class ServidorServer extends GenericService<Servidor, ServidorBO, ServidorRepository>{
+public class ServidorServer extends GenericService<Servidor, ServidorBO, ServidorRepository> {
 
 }
