@@ -8,6 +8,6 @@ import br.com.webmonitor.repository.Generic.MonitoramentoGenericRepository;
 /**
  * Created by Eduardo Balan on 07/07/2017.
  */
-public interface MonitoramentoCpuRepository extends GenericRepository<MonitoramentoCpu, Long> {
+public interface MonitoramentoCpuRepository extends MonitoramentoGenericRepository<MonitoramentoCpu, Long> {
 
 }

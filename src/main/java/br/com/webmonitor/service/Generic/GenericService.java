@@ -28,7 +28,7 @@ public class GenericService<Entity, Business extends GenericBO<Entity, Repositor
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public Entity buscarPorId(@PathVariable("id") Long id){
+    public Object buscarPorId(@PathVariable("id") Long id){
         return repository.findOne(id);
     }
 

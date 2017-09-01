@@ -18,8 +18,8 @@ public class InformacoesCpu {
     @Column(name = "cpui_id")
     private Long id;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "serv_id", nullable = true)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @JoinColumn(name = "serv_id")
     private Servidor servidor;
 
     @Column(name = "cpui_nome")

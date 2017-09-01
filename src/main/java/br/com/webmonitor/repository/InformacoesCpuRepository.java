@@ -8,7 +8,7 @@ import br.com.webmonitor.repository.Generic.InformacoesGenericRepository;
 /**
  * Created by Eduardo Balan on 01/07/2017.
  */
-public interface InformacoesCpuRepository extends GenericRepository<InformacoesCpu, Long> {
+public interface InformacoesCpuRepository extends InformacoesGenericRepository<InformacoesCpu, Long> {
 
 
 }

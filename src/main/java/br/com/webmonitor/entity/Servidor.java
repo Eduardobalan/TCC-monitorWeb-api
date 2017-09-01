@@ -23,10 +23,11 @@ public class Servidor  {
 
 //    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 //    @JsonIdentityReference(alwaysAsId = true)
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "domi_id")
     private Dominio dominio;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "serv_dthr_cadastro")
     private Date dthr_cadastro;
 

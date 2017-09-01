@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(path = "/servidor/{idServidor}/monitoramentoMemoria/{idMonitoramento}")
-public class MonitoramentoMemoriaService extends GenericService<MonitoramentoMemoria, MonitoramentoMemoriaBO, MonitoramentoMemoriaRepository> {
+public class MonitoramentoMemoriaService extends MonitoramentoGenericService<MonitoramentoMemoria, MonitoramentoMemoriaBO, MonitoramentoMemoriaRepository> {
 
 
 }

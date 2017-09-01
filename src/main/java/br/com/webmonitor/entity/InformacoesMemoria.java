@@ -19,7 +19,7 @@ public class InformacoesMemoria{
     @Column(name = "memi_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "serv_id")
     private Servidor servidor;
 

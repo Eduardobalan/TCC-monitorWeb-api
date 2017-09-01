@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Eduardo Balan on 30/06/2017.
  */
 @RestController
-@RequestMapping(path = "/servidor/{id}")
+@RequestMapping(path = "/servidor")
 public class ServidorServer extends GenericService<Servidor, ServidorBO, ServidorRepository> {
 
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Eduardo Balan on 27/06/2017.
  */
 @RestController
-@RequestMapping(path = "/dominio/{id]")
+@RequestMapping(path = "/dominio")
 public class DominioServer extends GenericService<Dominio, DominioBO, DominioRepository> {
 
 }

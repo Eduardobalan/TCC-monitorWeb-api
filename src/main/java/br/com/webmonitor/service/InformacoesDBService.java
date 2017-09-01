@@ -4,6 +4,7 @@ import br.com.webmonitor.business.InformacoesDBBO;
 import br.com.webmonitor.entity.InformacoesDB;
 import br.com.webmonitor.repository.InformacoesDBRepository;
 import br.com.webmonitor.service.Generic.GenericService;
+import br.com.webmonitor.service.Generic.InformacoesGenericService;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping(path = "/informacoes/db")
-public class InformacoesDBService extends GenericService<InformacoesDB, InformacoesDBBO, InformacoesDBRepository> {
+@RequestMapping(path = "/servidor/{idServidor}/informacoesdb")
+public class InformacoesDBService extends InformacoesGenericService<InformacoesDB, InformacoesDBBO, InformacoesDBRepository> {
 
 }

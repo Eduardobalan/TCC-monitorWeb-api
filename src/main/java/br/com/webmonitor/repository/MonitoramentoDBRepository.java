@@ -10,6 +10,6 @@ import java.util.List;
 /**
  * Created by Eduardo Balan on 07/07/2017.
  */
-public interface MonitoramentoDBRepository extends GenericRepository<MonitoramentoDB, Long> {
+public interface MonitoramentoDBRepository extends MonitoramentoGenericRepository<MonitoramentoDB, Long> {
 
 }

@@ -2,7 +2,6 @@ package br.com.webmonitor.repository;
 
 import br.com.webmonitor.entity.Dominio;
 import br.com.webmonitor.repository.Generic.GenericRepository;
-import br.com.webmonitor.repository.Generic.InformacoesGenericRepository;
 
 
 /**
