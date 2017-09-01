@@ -14,12 +14,12 @@ import javax.persistence.MappedSuperclass;
  * Created by Eduardo Balan on 29/08/2017.
  */
 @MappedSuperclass
-public class GenericBO <Entity, Repository extends JpaRepository> {
+public class GenericBO <Entity, Repository extends JpaRepository<Entity, Long>> {
 
     @Autowired
     private Repository repository;
 
-    public Object salvar(Entity entity){
+    public Entity salvar(Entity entity){
         try{
             return repository.save(entity);
         }catch (Exception e){

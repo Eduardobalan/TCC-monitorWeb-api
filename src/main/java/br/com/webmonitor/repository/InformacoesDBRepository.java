@@ -1,13 +1,14 @@
 package br.com.webmonitor.repository;
 
 import br.com.webmonitor.entity.InformacoesDB;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import br.com.webmonitor.repository.Generic.GenericRepository;
+import br.com.webmonitor.repository.Generic.InformacoesGenericRepository;
+
 
 
 /**
  * Created by Eduardo Balan on 28/06/2017.
  */
-public interface InformacoesDBRepository  extends JpaRepository<InformacoesDB, Long>, QueryDslPredicateExecutor<InformacoesDB>  {
+public interface InformacoesDBRepository  extends GenericRepository<InformacoesDB, Long> {
 
 }
