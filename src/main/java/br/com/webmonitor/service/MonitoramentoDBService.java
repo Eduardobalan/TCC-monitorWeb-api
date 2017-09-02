@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Eduardo Balan on 07/07/2017.
  */
 @RestController
-@RequestMapping(path = "/monitoramento/db")
+@RequestMapping(path = "/servidor/informacoes/{idInformacoes}/monitoramentodb")
 public class MonitoramentoDBService extends MonitoramentoGenericService<MonitoramentoDB, MonitoramentoDBBO, MonitoramentoDBRepository> {
 
 }

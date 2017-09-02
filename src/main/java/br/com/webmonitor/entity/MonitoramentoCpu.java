@@ -17,7 +17,7 @@ public class MonitoramentoCpu {
     @Column(name = "cpum_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cpui_id")
     private InformacoesCpu informacoesCpu;
 

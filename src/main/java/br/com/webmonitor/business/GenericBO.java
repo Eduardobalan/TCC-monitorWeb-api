@@ -19,14 +19,13 @@ public class GenericBO <Entity, Repository extends JpaRepository<Entity, Long>> 
     @Autowired
     private Repository repository;
 
-    public Entity salvar(Entity entity){
+    public Entity inserir(Entity entity){
         try{
             return repository.save(entity);
         }catch (Exception e){
             throw new SqlGenericRuntimeException(e);
         }
     }
-
 
     public void excluir(Long id){
         try{
