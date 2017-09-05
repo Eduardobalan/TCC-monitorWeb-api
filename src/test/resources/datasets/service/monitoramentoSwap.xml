@@ -1,0 +1,18 @@
+<dataset>
+    <TB_DOMINIO domi_id="1" domi_nome="Cliente" domi_observacao="Cliente normal" />
+    <TB_DOMINIO domi_id="2" domi_nome="Super Cliente" domi_observacao="Sempre cuidar muito desses clientes" />
+
+    <TB_SERVIDOR serv_id="1" domi_id="1" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor1" serv_empresa="Emp1" serv_observacao="obs1" />
+    <TB_SERVIDOR serv_id="2" domi_id="1" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor2" serv_empresa="Emp2" serv_observacao="obs2"/>
+    <TB_SERVIDOR serv_id="3" domi_id="2" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor3" serv_empresa="Emp3" serv_observacao="obs3"/>
+
+    <TB_INFORMACOES_SWAP swai_id="1" serv_id="1" swai_total="16000" swai_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_INFORMACOES_SWAP swai_id="2" serv_id="1" swai_total="8000" swai_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_INFORMACOES_SWAP swai_id="3" serv_id="3" swai_total="4000" swai_dthr_cadastro="2017-02-28 00:00:00.000"/>
+
+    <TB_MONITORAMENTO_SWAP swam_id="1" swai_id="1" swam_free="20000" swam_cached="21100" swam_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_SWAP swam_id="2" swai_id="1" swam_free="19000" swam_cached="20100" swam_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_SWAP swam_id="3" swai_id="2" swam_free="18000" swam_cached="19100" swam_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_SWAP swam_id="4" swai_id="3" swam_free="17000" swam_cached="18100" swam_dthr_cadastro="2017-02-28 00:00:00.000"/>
+
+</dataset>

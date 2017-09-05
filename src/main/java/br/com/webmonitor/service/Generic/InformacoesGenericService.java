@@ -51,8 +51,8 @@ public class InformacoesGenericService<Entity, Business extends GenericBO<Entity
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{idInformacoes}")
-    public void excluir(@PathVariable("id") Long id) {
-        business.excluir(id);
+    public void excluir(@PathVariable("idInformacoes") Long idInformacoes) {
+        business.excluir(idInformacoes);
     }
 
     @RequestMapping(method = RequestMethod.POST)
