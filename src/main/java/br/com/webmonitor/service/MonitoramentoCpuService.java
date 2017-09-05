@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Eduardo Balan on 07/07/2017.
  */
 @RestController
-@RequestMapping(path = "/monitoramento/cpu")
+@RequestMapping(path = "/servidor/informacoes/{idInformacoes}/monitoramentocpu")
 public class MonitoramentoCpuService extends MonitoramentoGenericService<MonitoramentoCpu, MonitoramentoCpuBO, MonitoramentoCpuRepository> {
 
 }

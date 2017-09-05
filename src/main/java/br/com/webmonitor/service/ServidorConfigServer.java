@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Eduardo Balan on 30/06/2017.
  */
 @RestController
-@RequestMapping(path = "/servidorConfig")
+@RequestMapping(path = "/servidor/{idServidor}/servidorconfiguracoes")
 public class ServidorConfigServer extends InformacoesGenericService<ServidorConfig, ServidorConfigBO, ServidorConfigRepository> {
 
 }

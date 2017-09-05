@@ -2,6 +2,7 @@ package br.com.webmonitor.service.Generic;
 
 import br.com.webmonitor.business.GenericBO;
 import br.com.webmonitor.entity.Servidor;
+import br.com.webmonitor.exception.GenericRuntimeException;
 import br.com.webmonitor.repository.Generic.InformacoesGenericRepository;
 import br.com.webmonitor.repository.Generic.MonitoramentoGenericRepository;
 import br.com.webmonitor.repository.ServidorRepository;
@@ -27,39 +28,35 @@ public class InformacoesGenericService<Entity, Business extends GenericBO<Entity
     @Autowired
     public Repository repository;
 
-
     @Autowired
     public ServidorRepository servidorRepository;
-
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Entity> buscarPorIdServidor(@PathVariable("idServidor") Long idServidor){
         if(idServidor>0){
             Servidor servidorDaBusca = servidorRepository.findOne(idServidor);
-            return repository.findByServidor(servidorDaBusca);
+            if(servidorDaBusca != null){
+                return repository.findByServidor(servidorDaBusca);
+            }else{
+                throw new GenericRuntimeException("Servidor não localizado.", null);
+            }
         }else{
             return repository.findAll();
         }
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{idMonitoramento}")
-    public Entity buscarPorIdMonitoramento(@PathVariable("idMonitoramento") Long id){
-        return repository.findOne(id);
+    @RequestMapping(method = RequestMethod.GET, path = "/{idInformacoes}")
+    public Entity buscarPorIdInformacoes(@PathVariable("idInformacoes") Long idMonitoramento){
+        return repository.findOne(idMonitoramento);
     }
 
-//    @RequestMapping(method = RequestMethod.GET, path = {"/{idServidor}, /{idMonitoramento}"})
-//    public Entity buscarPorId(@PathVariable("idServidor") Long idServidor,
-//                              @PathVariable("idMonitoramento") Long idMonitoramento){
-//        return repository.findOne(idMonitoramento);
-//    }
-
-    @RequestMapping(method = RequestMethod.DELETE, path = "/{idMonitoramento}")
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{idInformacoes}")
     public void excluir(@PathVariable("id") Long id) {
         business.excluir(id);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public Entity inserir(@RequestBody Entity Entity) {
-       return business.salvar(Entity);
+       return business.inserir(Entity);
     }
 }

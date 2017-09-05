@@ -15,7 +15,7 @@ public class MonitoramentoDB {
     @Column(name = "dbmo_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "dbin_id")
     private InformacoesDB informacoesDB;
 

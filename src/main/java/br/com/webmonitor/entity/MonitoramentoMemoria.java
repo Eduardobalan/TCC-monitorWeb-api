@@ -18,7 +18,7 @@ public class MonitoramentoMemoria {
     @Column(name = "memm_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "memi_id")
     private InformacoesMemoria informacoesMemoria;
 

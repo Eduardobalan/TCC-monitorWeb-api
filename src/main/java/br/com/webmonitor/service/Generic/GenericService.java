@@ -39,6 +39,6 @@ public class GenericService<Entity, Business extends GenericBO<Entity, Repositor
 
     @RequestMapping(method = RequestMethod.POST)
     public Entity inserir(@RequestBody Entity Entity) {
-       return business.salvar(Entity);
+       return business.inserir(Entity);
     }
 }
