@@ -16,9 +16,7 @@ import javax.annotation.Resource;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -27,10 +25,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Created by Eduardo Balan on 27/06/2017.
  */
 
-@DatabaseSetup(value = DominioServerTest.DATASET, type = DatabaseOperation.INSERT)
-public class DominioServerTest extends GenericTest{
+@DatabaseSetup(value = ServidorServerTest.DATASET, type = DatabaseOperation.INSERT)
+public class ServidorServerTest extends GenericTest{
 
-    protected static final String DATASET = "classpath:/datasets/service/dominio.xml";
+    protected static final String DATASET = "classpath:/datasets/service/servidor.xml";
 
     @Resource
     private WebApplicationContext webApplicationContext;
@@ -45,50 +43,60 @@ public class DominioServerTest extends GenericTest{
 
     @Test
     public void buscarTodosTest() throws Exception {
-        mockMvc.perform(get("/dominio"))
+        mockMvc.perform(get("/servidor"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].id", is(1)))
-                .andExpect(jsonPath("$[0].nome", is("Cliente")))
-                .andExpect(jsonPath("$[0].observacao", is("Cliente normal")))
+                .andExpect(jsonPath("$[0].nome", is("Servidor1")))
+                .andExpect(jsonPath("$[0].empresa", is("Emp1")))
+                .andExpect(jsonPath("$[0].observacao", is("obs1")))
                 .andExpect(jsonPath("$[1].id", is(2)))
-                .andExpect(jsonPath("$[1].nome", is("Super Cliente")))
-                .andExpect(jsonPath("$[1].observacao", is("Sempre cuidar muito desses clientes")));
+                .andExpect(jsonPath("$[1].nome", is("Servidor2")))
+                .andExpect(jsonPath("$[2].id", is(3)))
+                .andExpect(jsonPath("$[2].nome", is("Servidor3")));
+
     }
 
     @Test
     public void buscarPorIdTest() throws Exception {
-        mockMvc.perform(get("/dominio/2"))
+        mockMvc.perform(get("/servidor/2"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(2)))
-                .andExpect(jsonPath("$.nome", is("Super Cliente")))
-                .andExpect(jsonPath("$.observacao", is("Sempre cuidar muito desses clientes")));
+                .andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")))
+                .andExpect(jsonPath("$.nome", is("Servidor2")))
+                .andExpect(jsonPath("$.empresa", is("Emp2")))
+                .andExpect(jsonPath("$.observacao", is("obs2")));
     }
 
     @Test
     public void inserirTest() throws Exception {
 
-        mockMvc.perform(post("/dominio").contentType(MediaType.APPLICATION_JSON_UTF8)
+        mockMvc.perform(post("/servidor").contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content("{ " +
                         " \"nome\" : \"Novo Registro\" ," +
+                        " \"dominio\":{\"id\":2}," +
+                        " \"empresa\" : \"Nova Empresa\" ," +
+                        " \"dthr_cadastro\" : \"2017-02-28T04:00:00.000+0000\" ," +
                         " \"observacao\" : \"Nova Observacao\" }"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is(3)))
+                .andExpect(jsonPath("$.id", is(4)))
                 .andExpect(jsonPath("$.nome", is("Novo Registro")))
+                .andExpect(jsonPath("$.dominio.id", is(2)))
+                .andExpect(jsonPath("$.empresa", is("Nova Empresa")))
+                .andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")))
                 .andExpect(jsonPath("$.observacao", is("Nova Observacao")));
     }
 
     @Test
     public void deletarTest() throws Exception {
-        mockMvc.perform(delete("/dominio/2"))
+        mockMvc.perform(delete("/servidor/3"))
                 .andExpect(status().isOk());
 
-        mockMvc.perform(get("/dominio"))
+        mockMvc.perform(get("/servidor"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id", is(1)))
-                .andExpect(jsonPath("$[0].nome", is("Cliente")))
-                .andExpect(jsonPath("$[0].observacao", is("Cliente normal")));
+                .andExpect(jsonPath("$[1].id", is(2)));
     }
 
     //----------------  Exception ----------------------------
@@ -96,7 +104,7 @@ public class DominioServerTest extends GenericTest{
     @Test
     public void deletarIdInexistenteTest() throws Exception {
 
-        Exception expt = mockMvc.perform(delete("/dominio/999999"))
+        Exception expt = mockMvc.perform(delete("/servidor/999999"))
                 .andExpect(status().isInternalServerError())
                 .andReturn().getResolvedException();
 

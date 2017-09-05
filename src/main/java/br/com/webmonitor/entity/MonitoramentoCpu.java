@@ -22,10 +22,10 @@ public class MonitoramentoCpu {
     private InformacoesCpu informacoesCpu;
 
     @Column(name = "cpum_numero_nucleo")
-    private Long numero_nucleo;
+    private Long numeroNucleo;
 
     @Column(name = "cpum_cpu_mhz")
-    private Long cpu_mhz;
+    private Long cpuMhz;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "cpum_dthr_cadastro")
@@ -35,20 +35,40 @@ public class MonitoramentoCpu {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public InformacoesCpu getInformacoesCpu() {
         return informacoesCpu;
     }
 
-    public Long getNumero_nucleo() {
-        return numero_nucleo;
+    public void setInformacoesCpu(InformacoesCpu informacoesCpu) {
+        this.informacoesCpu = informacoesCpu;
     }
 
-    public Long getCpu_mhz() {
-        return cpu_mhz;
+    public Long getNumeroNucleo() {
+        return numeroNucleo;
+    }
+
+    public void setNumeroNucleo(Long numeroNucleo) {
+        this.numeroNucleo = numeroNucleo;
+    }
+
+    public Long getCpuMhz() {
+        return cpuMhz;
+    }
+
+    public void setCpuMhz(Long cpuMhz) {
+        this.cpuMhz = cpuMhz;
     }
 
     public Date getDthr_cadastro() {
         return dthr_cadastro;
+    }
+
+    public void setDthr_cadastro(Date dthr_cadastro) {
+        this.dthr_cadastro = dthr_cadastro;
     }
 }
 

@@ -33,7 +33,6 @@ public class MonitoramentoGenericService<Entity, Business extends GenericBO<Enti
     public List<Entity> buscarPorIdServidor(@PathVariable("idInformacoes") Long idServidor){
         if(idServidor>0){
             return repository.findByidInformacoes(idServidor);
-
         }else{
             return repository.findAll();
         }
@@ -45,8 +44,8 @@ public class MonitoramentoGenericService<Entity, Business extends GenericBO<Enti
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{idInformacoes}")
-    public void excluir(@PathVariable("id") Long id) {
-        business.excluir(id);
+    public void excluir(@PathVariable("idInformacoes") Long idInformacoes) {
+        business.excluir(idInformacoes);
     }
 
     @RequestMapping(method = RequestMethod.POST)

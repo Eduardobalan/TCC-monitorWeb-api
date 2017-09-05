@@ -1,0 +1,18 @@
+<dataset>
+    <TB_DOMINIO domi_id="1" domi_nome="Cliente" domi_observacao="Cliente normal" />
+    <TB_DOMINIO domi_id="2" domi_nome="Super Cliente" domi_observacao="Sempre cuidar muito desses clientes" />
+
+    <TB_SERVIDOR serv_id="1" domi_id="1" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor1" serv_empresa="Emp1" serv_observacao="obs1" />
+    <TB_SERVIDOR serv_id="2" domi_id="1" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor2" serv_empresa="Emp2" serv_observacao="obs2"/>
+    <TB_SERVIDOR serv_id="3" domi_id="2" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor3" serv_empresa="Emp3" serv_observacao="obs3"/>
+
+    <TB_INFORMACOES_MEMORIA memi_id="1" serv_id="1" memi_total="16000" memi_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_INFORMACOES_MEMORIA memi_id="2" serv_id="1" memi_total="8000" memi_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_INFORMACOES_MEMORIA memi_id="3" serv_id="3" memi_total="4000" memi_dthr_cadastro="2017-02-28 00:00:00.000"/>
+
+    <TB_MONITORAMENTO_MEMORIA memm_id="1" memi_id="1" memm_active="16000" memm_memfree="8000" memm_availabre="100" memm_buffers="10"  memm_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_MEMORIA memm_id="2" memi_id="1" memm_active="8000" memm_memfree="4000" memm_availabre="200" memm_buffers="20" memm_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_MEMORIA memm_id="3" memi_id="2" memm_active="4000" memm_memfree="2000" memm_availabre="300" memm_buffers="30" memm_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_MEMORIA memm_id="4" memi_id="3" memm_active="2000" memm_memfree="1000" memm_availabre="400" memm_buffers="40" memm_dthr_cadastro="2017-02-28 00:00:00.000"/>
+
+</dataset>

@@ -26,10 +26,10 @@ public class InformacoesCpu {
     private String nome;
 
     @Column(name = "cpui_cache_size")
-    private Long cache_size;
+    private Long cacheSize;
 
     @Column(name = "cpui_cpu_cores")
-    private Long cpu_cores;
+    private Long cpuCores;
 
     //Numero de cores Virtuais
     @Column(name = "cpui_siblings")
@@ -63,20 +63,20 @@ public class InformacoesCpu {
         this.nome = nome;
     }
 
-    public Long getCache_size() {
-        return cache_size;
+    public Long getCacheSize() {
+        return cacheSize;
     }
 
-    public void setCache_size(Long cache_size) {
-        this.cache_size = cache_size;
+    public void setCacheSize(Long cacheSize) {
+        this.cacheSize = cacheSize;
     }
 
-    public Long getCpu_cores() {
-        return cpu_cores;
+    public Long getCpuCores() {
+        return cpuCores;
     }
 
-    public void setCpu_cores(Long cpu_cores) {
-        this.cpu_cores = cpu_cores;
+    public void setCpuCores(Long cpuCores) {
+        this.cpuCores = cpuCores;
     }
 
     public Long getSiblings() {
