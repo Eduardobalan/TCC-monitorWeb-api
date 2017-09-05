@@ -1,5 +1,7 @@
 package br.com.webmonitor.entity;
 
+import br.com.webmonitor.exception.GenericRuntimeException;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -11,8 +13,8 @@ import java.util.List;
 
 @Entity
 //@DynamicUpdate
-@Table(name = "TB_DOMINIO" , schema = "public")
-public class Dominio{
+@Table(name = "TB_DOMINIO" , schema = "PUBLIC")
+public class Dominio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

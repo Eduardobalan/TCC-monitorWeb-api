@@ -3,6 +3,7 @@ package br.com.webmonitor.business;
 
 import br.com.webmonitor.entity.InterfaceGenericEntity;
 import br.com.webmonitor.exception.SqlGenericRuntimeException;
+import br.com.webmonitor.exception.SqlInexistenteRuntimeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -28,6 +29,10 @@ public class GenericBO <Entity, Repository extends JpaRepository<Entity, Long>> 
     }
 
     public void excluir(Long id){
+        Entity entity = repository.findOne(id);
+        if(entity == null){
+            throw new SqlInexistenteRuntimeException("Registro não encontrado na base de dados.", null);
+        }
         try{
             repository.delete(id);
         }catch (Exception e){
