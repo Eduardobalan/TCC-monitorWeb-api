@@ -1,0 +1,4 @@
+<dataset>
+    <TB_DOMINIO domi_id="1" domi_nome="Cliente" domi_observacao="Cliente normal" />
+    <TB_DOMINIO domi_id="2" domi_nome="Super Cliente" domi_observacao="Sempre cuidar muito desses clientes" />
+</dataset>
