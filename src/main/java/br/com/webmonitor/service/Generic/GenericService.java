@@ -1,7 +1,7 @@
 package br.com.webmonitor.service.Generic;
 
-import br.com.webmonitor.business.GenericBO;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import br.com.webmonitor.business.generic.GenericBO;
+import br.com.webmonitor.entity.Generic.GenericEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.*;
@@ -11,16 +11,28 @@ import java.util.List;
 
 
 /**
- * Created by Eduardo Balan on 27/06/2017.
+ * Class de service GenericService é responsavel pelos servições mais genericos com poucas regras de negocio.:
+ *
+ * @author Eduardo Balan
+ *
+ * @param Entity Entidade a qual ela ira prestar o servico.
+ * @param Business Business responsavel pela regras de servico da entidade.
+ * @param Repository Repositorio responsavel pela Entity que vc esta utilizando.
+ *
+ * @throws SqlInexistenteRuntimeException
+ * @throws SqlGenericRuntimeException
+ *
  */
 @MappedSuperclass
-public class GenericService<Entity, Business extends GenericBO<Entity, Repository>, Repository extends JpaRepository<Entity, Long>> {
+public class GenericService<Entity extends GenericEntity, Business extends GenericBO<Entity, Repository>, Repository extends JpaRepository<Entity, Long>> {
 
+    /* Regras de servico da Entity.*/
     @Autowired
-    public Business business;
+    private Business business;
 
+    /* Repositorio responsavel pela Entity.*/
     @Autowired
-    public Repository repository;
+    private Repository repository;
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Entity> buscar(){
@@ -39,6 +51,6 @@ public class GenericService<Entity, Business extends GenericBO<Entity, Repositor
 
     @RequestMapping(method = RequestMethod.POST)
     public Entity inserir(@RequestBody Entity Entity) {
-       return business.inserir(Entity);
+        return business.inserir(Entity);
     }
 }

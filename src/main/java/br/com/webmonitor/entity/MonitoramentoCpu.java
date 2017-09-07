@@ -1,5 +1,6 @@
 package br.com.webmonitor.entity;
 
+import br.com.webmonitor.entity.Generic.GenericEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "tb_monitoramento_cpu", schema = "public")
-public class MonitoramentoCpu {
+public class MonitoramentoCpu implements GenericEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

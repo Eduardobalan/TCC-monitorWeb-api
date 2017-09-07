@@ -1,12 +1,10 @@
 package br.com.webmonitor.service.Generic;
 
-import br.com.webmonitor.business.GenericBO;
-import br.com.webmonitor.entity.Servidor;
-import br.com.webmonitor.exception.GenericRuntimeException;
+import br.com.webmonitor.business.generic.GenericBO;
+import br.com.webmonitor.entity.Generic.GenericEntity;
+import br.com.webmonitor.exception.SqlInexistenteRuntimeException;
 import br.com.webmonitor.repository.Generic.MonitoramentoGenericRepository;
-import br.com.webmonitor.repository.ServidorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,35 +15,46 @@ import java.util.List;
 
 
 /**
- * Created by Eduardo Balan on 27/06/2017.
+ * Class de service MonitoramentoGenericService é responsavel pelos serviços genericos do tipo Monitoramento.
+ *
+ * @author Eduardo Balan
+ *
+ * @param Entity Entidade a qual ela ira prestar o servico.
+ * @param Business Business responsavel pela regras de servico da entidade.
+ * @param Repository Repositorio responsavel pela Entity que vc esta utilizando.
+ *
+ * @throws SqlInexistenteRuntimeException
+ * @throws SqlGenericRuntimeException
+ *
  */
 @MappedSuperclass
-public class MonitoramentoGenericService<Entity, Business extends GenericBO<Entity, Repository>, Repository extends MonitoramentoGenericRepository<Entity, Long>> {
+public class MonitoramentoGenericService<Entity extends GenericEntity, Business extends GenericBO<Entity, Repository>, Repository extends MonitoramentoGenericRepository<Entity, Long>> {
 
+    /* Regras de servico da Entity.*/
     @Autowired
-    public Business business;
+    private Business business;
 
+    /* Repositorio responsavel pela Entity.*/
     @Autowired
-    public Repository repository;
-
+    private Repository repository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Entity> buscarPorIdServidor(@PathVariable("idInformacoes") Long idServidor){
-        if(idServidor>0){
-            return repository.findByidInformacoes(idServidor);
-        }else{
+    public List<Entity> buscarPorIdServidor(@PathVariable("idInformacoes") Long idInformacoes){
+        if(idInformacoes<=0){
             return repository.findAll();
+        }else{
+            return repository.findByidInformacoes(idInformacoes);
         }
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{idInformacoes}")
-    public Entity buscarPorIdMonitoramento(@PathVariable("idInformacoes") Long idMonitoramento){
+    @RequestMapping(method = RequestMethod.GET, path = "/{idMonitoramento}")
+    public Entity buscarPorIdMonitoramento(@PathVariable("idMonitoramento") Long idMonitoramento){
         return repository.findOne(idMonitoramento);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, path = "/{idInformacoes}")
-    public void excluir(@PathVariable("idInformacoes") Long idInformacoes) {
-        business.excluir(idInformacoes);
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{idMonitoramento}")
+    public void excluir(@PathVariable("idMonitoramento") Long idMonitoramento) {
+        business.excluir(idMonitoramento);
     }
 
     @RequestMapping(method = RequestMethod.POST)

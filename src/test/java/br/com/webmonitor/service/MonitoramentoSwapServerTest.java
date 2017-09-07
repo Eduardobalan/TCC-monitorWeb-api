@@ -105,7 +105,7 @@ public class MonitoramentoSwapServerTest extends GenericTest {
         mockMvc.perform(get("/servidor/informacoes/0/monitoramentoswap/"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
-                .andExpect(jsonPath("$.id", is(1)))
+                .andExpect(jsonPath("$[0].id", is(1)))
                 .andExpect(jsonPath("$[1].id", is(2)))
                 .andExpect(jsonPath("$[2].id", is(4)));
     }

@@ -1,5 +1,6 @@
 package br.com.webmonitor.business;
 
+import br.com.webmonitor.business.generic.GenericBO;
 import br.com.webmonitor.entity.InformacoesDB;
 import br.com.webmonitor.repository.InformacoesDBRepository;
 import org.springframework.stereotype.Component;

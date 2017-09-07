@@ -1,5 +1,7 @@
 package br.com.webmonitor.entity;
 
+import br.com.webmonitor.entity.Generic.GenericEntity;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,7 +10,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "tb_monitoramento_db", schema = "public")
-public class MonitoramentoDB {
+public class MonitoramentoDB implements GenericEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

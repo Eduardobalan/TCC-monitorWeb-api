@@ -1,5 +1,6 @@
 package br.com.webmonitor.business;
 
+import br.com.webmonitor.business.generic.GenericBO;
 import br.com.webmonitor.entity.Dominio;
 import br.com.webmonitor.repository.DominioRepository;
 import org.springframework.stereotype.Component;

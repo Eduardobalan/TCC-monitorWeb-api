@@ -1,10 +1,10 @@
 package br.com.webmonitor.service.Generic;
 
-import br.com.webmonitor.business.GenericBO;
+import br.com.webmonitor.business.generic.GenericBO;
+import br.com.webmonitor.entity.Generic.GenericEntity;
 import br.com.webmonitor.entity.Servidor;
-import br.com.webmonitor.exception.GenericRuntimeException;
+import br.com.webmonitor.exception.SqlInexistenteRuntimeException;
 import br.com.webmonitor.repository.Generic.InformacoesGenericRepository;
-import br.com.webmonitor.repository.Generic.MonitoramentoGenericRepository;
 import br.com.webmonitor.repository.ServidorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,31 +17,44 @@ import java.util.List;
 
 
 /**
- * Created by Eduardo Balan on 27/06/2017.
+ * Class de service InformacoesGenericService é responsavel pelos serviços genericos do tipo Informações.
+ *
+ * @author Eduardo Balan
+ *
+ * @param Entity Entidade a qual ela ira prestar o servico.
+ * @param Business Business responsavel pela regras de servico da entidade.
+ * @param Repository Repositorio responsavel pela Entity que vc esta utilizando.
+ *
+ * @throws SqlInexistenteRuntimeException
+ * @throws SqlGenericRuntimeException
+ *
  */
 @MappedSuperclass
-public class InformacoesGenericService<Entity, Business extends GenericBO<Entity, Repository>, Repository extends InformacoesGenericRepository<Entity, Long>> {
+public class InformacoesGenericService<Entity extends GenericEntity, Business extends GenericBO<Entity, Repository>, Repository extends InformacoesGenericRepository<Entity, Long>> {
 
+    /* Regras de servico da Entity.*/
     @Autowired
-    public Business business;
+    private Business business;
 
+    /* Repositorio responsavel pela Entity.*/
     @Autowired
-    public Repository repository;
+    private Repository repository;
 
+    /* Repositório do Servidor, a quais todas as entidades do tipo Informacoes posuem relacionamento.*/
     @Autowired
-    public ServidorRepository servidorRepository;
+    private ServidorRepository servidorRepository;
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Entity> buscarPorIdServidor(@PathVariable("idServidor") Long idServidor){
-        if(idServidor>0){
-            Servidor servidorDaBusca = servidorRepository.findOne(idServidor);
-            if(servidorDaBusca != null){
-                return repository.findByServidor(servidorDaBusca);
-            }else{
-                throw new GenericRuntimeException("Servidor não localizado.", null);
-            }
-        }else{
+        if(idServidor<=0){
             return repository.findAll();
+        }
+
+        Servidor servidorDaBusca = servidorRepository.findOne(idServidor);
+        if(servidorDaBusca == null){
+            throw new SqlInexistenteRuntimeException("Servidor não localizado.", null);
+        }else{
+            return repository.findByServidor(servidorDaBusca);
         }
     }
 
@@ -57,6 +70,6 @@ public class InformacoesGenericService<Entity, Business extends GenericBO<Entity
 
     @RequestMapping(method = RequestMethod.POST)
     public Entity inserir(@RequestBody Entity Entity) {
-       return business.inserir(Entity);
+        return business.inserir(Entity);
     }
 }

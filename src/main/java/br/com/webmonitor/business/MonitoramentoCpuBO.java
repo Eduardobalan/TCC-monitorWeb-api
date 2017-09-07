@@ -1,5 +1,6 @@
 package br.com.webmonitor.business;
 
+import br.com.webmonitor.business.generic.GenericBO;
 import br.com.webmonitor.entity.MonitoramentoCpu;
 import br.com.webmonitor.repository.MonitoramentoCpuRepository;
 import org.springframework.stereotype.Component;
