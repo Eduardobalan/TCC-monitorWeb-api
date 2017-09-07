@@ -117,6 +117,17 @@ public class InformacoesDBServerTest extends GenericTest {
         Assert.assertTrue(expt.getClass().isAssignableFrom(SqlInexistenteRuntimeException.class));
         Assert.assertTrue(expt.getMessage().equals("Registro não encontrado na base de dados."));
     }
+
+    @Test
+    public void buscarIdInexistenteServidorTest() throws Exception {
+
+        Exception expt =  mockMvc.perform(get("/servidor/99999999/informacoesdb"))
+                .andExpect(status().isInternalServerError())
+                .andReturn().getResolvedException();
+
+        Assert.assertTrue(expt.getClass().isAssignableFrom(SqlInexistenteRuntimeException.class));
+        Assert.assertTrue(expt.getMessage().equals("Servidor não localizado."));
+    }
 }
 
 

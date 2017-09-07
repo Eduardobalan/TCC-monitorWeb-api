@@ -1,5 +1,6 @@
 package br.com.webmonitor.entity;
 
+import br.com.webmonitor.entity.Generic.GenericEntity;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -14,7 +15,7 @@ import java.util.Date;
 //@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "tb_servidor", schema = "public")
-public class Servidor  {
+public class Servidor  implements GenericEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
