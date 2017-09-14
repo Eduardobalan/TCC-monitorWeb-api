@@ -1,0 +1,19 @@
+<dataset>
+
+    <TB_USUARIO usu_id="1" usu_dthr_cadastro="2017-02-28 00:00:00.000" usu_nome="Eduardo"
+                usu_sobrenome="Balan" usu_login="Eduardo Balan" usu_email="Eduardo_balan1@hotmail.com" usu_senha="102030"
+                usu_sexo="MASCULINO" usu_telefone="99159966"  />
+
+    <TB_USUARIO usu_id="2" usu_dthr_cadastro="2017-02-28 00:00:00.000" usu_nome="karol"
+                usu_sobrenome="Jeronimo" usu_login="KAROL JERONIMO" usu_email="KAROLJERONIMO@hotmail.com" usu_senha="301020"
+                usu_sexo="FEMININO" usu_telefone="99156925"  />
+
+    <TB_DOMINIO domi_id="1" domi_nome="Cliente" domi_observacao="Cliente normal" />
+    <TB_DOMINIO domi_id="2" domi_nome="Super Cliente" domi_observacao="Sempre cuidar muito desses clientes" />
+
+
+    <TB_USUARIO_HAS_TB_DOMINIO usu_id="1" domi_id="1"/>
+    <TB_USUARIO_HAS_TB_DOMINIO usu_id="1" domi_id="2"/>
+    <TB_USUARIO_HAS_TB_DOMINIO usu_id="2" domi_id="1"/>
+
+</dataset>
