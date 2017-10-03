@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 //@DynamicUpdate
 @Table(name = "tb_informacoes_cpu", schema = "public")
-public class InformacoesCpu implements GenericEntity {
+public class InformacoesCpu extends GenericEntity<Long>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

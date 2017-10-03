@@ -11,7 +11,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "tb_monitoramento_cpu", schema = "public")
-public class MonitoramentoCpu implements GenericEntity {
+public class MonitoramentoCpu extends GenericEntity<Long>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

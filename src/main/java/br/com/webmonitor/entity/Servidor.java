@@ -15,7 +15,7 @@ import java.util.Date;
 //@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "tb_servidor", schema = "public")
-public class Servidor  implements GenericEntity {
+public class Servidor  extends GenericEntity<Long>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

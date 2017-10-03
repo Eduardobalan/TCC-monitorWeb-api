@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 //@DynamicUpdate
 @Table(name = "TB_DOMINIO" , schema = "PUBLIC")
-public class Dominio implements GenericEntity{
+public class Dominio extends GenericEntity<Long>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

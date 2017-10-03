@@ -10,7 +10,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "tb_monitoramento_db", schema = "public")
-public class MonitoramentoDB implements GenericEntity {
+public class MonitoramentoDB extends GenericEntity<Long>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

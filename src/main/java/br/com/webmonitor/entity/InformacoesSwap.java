@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 //@DynamicUpdate
 @Table(name = "tb_informacoes_swap" , schema = "public")
-public class InformacoesSwap implements GenericEntity {
+public class InformacoesSwap extends GenericEntity<Long>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
