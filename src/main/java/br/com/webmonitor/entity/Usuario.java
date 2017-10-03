@@ -14,7 +14,7 @@ import java.util.Date;
 @Entity
 //@DynamicUpdate
 @Table(name = "TB_USUARIO" , schema = "PUBLIC")
-public class Usuario implements GenericEntity{
+public class Usuario extends GenericEntity<Long>{
 
 
     @Id
