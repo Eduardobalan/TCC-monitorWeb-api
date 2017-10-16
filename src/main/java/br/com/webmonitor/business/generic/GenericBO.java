@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import javax.persistence.MappedSuperclass;
+import java.util.Date;
 
 
 /**
@@ -42,6 +43,7 @@ public class GenericBO <Entity extends GenericEntity, Repository extends JpaRepo
      */
     public Entity inserir(Entity entityNova){
         try{
+            entityNova.setDthr_cadastro(new Date());
             return repository.save(entityNova);
         }catch (Exception e){
             throw new SqlGenericRuntimeException(e);

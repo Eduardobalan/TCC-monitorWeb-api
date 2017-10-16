@@ -12,14 +12,15 @@ import java.util.Date;
 @Entity
 //@DynamicUpdate
 @Table(name = "tb_informacoes_cpu", schema = "public")
+@SequenceGenerator(name = "tb_informacoes_cpu_cpui_id_seq", sequenceName = "public.tb_informacoes_cpu_cpui_id_seq")
 public class InformacoesCpu extends GenericEntity<Long>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_informacoes_cpu_cpui_id_seq")
     @Column(name = "cpui_id")
     private Long id;
 
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "serv_id")
     private Servidor servidor;
 
