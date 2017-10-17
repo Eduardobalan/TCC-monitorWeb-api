@@ -16,10 +16,11 @@ import java.util.List;
 @Entity
 //@DynamicUpdate
 @Table(name = "TB_DOMINIO" , schema = "PUBLIC")
+@SequenceGenerator(name = "tb_dominio_domi_id_seq", sequenceName = "public.tb_dominio_domi_id_seq")
 public class Dominio extends GenericEntity<Long>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_dominio_domi_id_seq")
     @Column(name = "domi_id")
     private Long id;
 

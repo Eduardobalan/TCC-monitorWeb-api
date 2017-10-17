@@ -15,10 +15,11 @@ import java.util.Date;
 //@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "tb_servidor", schema = "public")
+@SequenceGenerator(name = "tb_servidor_domi_id_seq", sequenceName = "public.tb_servidor_domi_id_seq")
 public class Servidor  extends GenericEntity<Long>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_servidor_domi_id_seq")
     @Column(name = "serv_id")
     private Long id;
 
