@@ -83,14 +83,12 @@ public class InformacoesDBServerTest extends GenericTest {
                 .content("{ " +
                         " \"nome\" : \"PostgresSql novo\" ," +
                         " \"servidor\":{\"id\":2}," +
-                        " \"versao\" : \"9.1\" ," +
-                        " \"dthr_cadastro\" : \"2017-02-28T04:00:00.000+0000\" }"))
+                        " \"versao\" : \"9.1\" }"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(4)))
                 .andExpect(jsonPath("$.nome", is("PostgresSql novo")))
                 .andExpect(jsonPath("$.servidor.id", is(2)))
-                .andExpect(jsonPath("$.versao", is("9.1")))
-                .andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")));
+                .andExpect(jsonPath("$.versao", is("9.1")));
     }
 
     @Test

@@ -12,10 +12,11 @@ import java.util.Date;
 @Entity
 //@DynamicUpdate
 @Table(name = "tb_informacoes_db", schema = "public")
+@SequenceGenerator(name = "tb_informacoes_db_dbin_id_seq", sequenceName = "public.tb_informacoes_db_dbin_id_seq")
 public class InformacoesDB extends GenericEntity<Long>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_informacoes_db_dbin_id_seq")
     @Column(name = "dbin_id")
     private Long id;
 

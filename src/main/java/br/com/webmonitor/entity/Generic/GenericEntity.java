@@ -2,6 +2,7 @@ package br.com.webmonitor.entity.Generic;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,10 @@ public abstract class GenericEntity<T extends Serializable> implements Serializa
     public abstract T getId();
 
     public abstract void setId(T id);
+
+    public abstract Date getDthr_cadastro();
+
+    public abstract void setDthr_cadastro(Date date);
 
     /**
      * Indica quando outro objeto é igual a este. Nesta implementação, qualquer objeto derivado de

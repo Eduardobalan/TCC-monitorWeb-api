@@ -10,10 +10,11 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "tb_monitoramento_swap", schema = "public")
+@SequenceGenerator(name = "tb_monitoramento_swap_swam_id_seq", sequenceName = "public.tb_monitoramento_swap_swam_id_seq")
 public class MonitoramentoSwap extends GenericEntity<Long>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_monitoramento_swap_swam_id_seq")
     @Column(name = "swam_id")
     private Long id;
 
