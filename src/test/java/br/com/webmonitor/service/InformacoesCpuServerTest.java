@@ -14,6 +14,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
 
+import java.util.Date;
+
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -89,7 +91,6 @@ public class InformacoesCpuServerTest extends GenericTest {
                 .content("{ " +
                         " \"nome\" : \"I9\" ," +
                         " \"servidor\":{\"id\":2}," +
-                        " \"dthr_cadastro\" : \"2017-02-28T04:00:00.000+0000\" ," +
                         " \"cacheSize\" : 1024 ," +
                         " \"cpuCores\" : 16 ," +
                         " \"siblings\" : 32 }"))
@@ -98,8 +99,8 @@ public class InformacoesCpuServerTest extends GenericTest {
                 .andExpect(jsonPath("$.nome", is("I9")))
                 .andExpect(jsonPath("$.cacheSize", is(1024)))
                 .andExpect(jsonPath("$.cpuCores", is(16)))
-                .andExpect(jsonPath("$.siblings", is(32)))
-                .andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")));
+                .andExpect(jsonPath("$.siblings", is(32)));
+                //.andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")));
     }
 
     @Test
