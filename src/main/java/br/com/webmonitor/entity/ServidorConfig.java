@@ -56,9 +56,16 @@ public class ServidorConfig extends GenericEntity<Long>{
     @Column(name = "serc_porta", columnDefinition = "integer default 8081")
     private Long porta;
 
-    @Column(name = "serc_porta2", columnDefinition = "integer default 8081")
+    @Column(name = "serc_porta2", columnDefinition = "integer default 8080")
     private Long porta2;
 
+    @Column(name = "serc_postgres_path_main", columnDefinition = "/etc/postgresql/9.6/main")
+    private String postgresPathMain;
+
+    @Column(name = "serc_postgres_versao", columnDefinition = "9.6")
+    private String postgresVersao;
+
+    // Getter and Setter
     @Override
     public Long getId() {
         return id;
@@ -163,5 +170,21 @@ public class ServidorConfig extends GenericEntity<Long>{
 
     public void setPorta2(Long porta2) {
         this.porta2 = porta2;
+    }
+
+    public String getPostgresPathMain() {
+        return postgresPathMain;
+    }
+
+    public void setPostgresPathMain(String postgresPathMain) {
+        this.postgresPathMain = postgresPathMain;
+    }
+
+    public String getPostgresVersao() {
+        return postgresVersao;
+    }
+
+    public void setPostgresVersao(String postgresVersao) {
+        this.postgresVersao = postgresVersao;
     }
 }

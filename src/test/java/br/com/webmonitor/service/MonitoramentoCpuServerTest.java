@@ -93,15 +93,15 @@ public class MonitoramentoCpuServerTest extends GenericTest {
                 .content("{ " +
                         " \"nome\" : \"I9\" ," +
                         " \"informacoesCpu\":{\"id\":3}," +
-                        " \"dthr_cadastro\" : \"2017-02-28T04:00:00.000+0000\" ," +
+                        //" \"dthr_cadastro\" : \"2017-02-28T04:00:00.000+0000\" ," +
                         " \"numeroNucleo\" : 1 ," +
                         " \"cpuMhz\" : 3300 }"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(5)))
                 .andExpect(jsonPath("$.informacoesCpu.id", is(3)))
                 .andExpect(jsonPath("$.numeroNucleo", is(1)))
-                .andExpect(jsonPath("$.cpuMhz", is(3300)))
-                .andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")));
+                .andExpect(jsonPath("$.cpuMhz", is(3300)));
+                //.andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")));
     }
 
     @Test

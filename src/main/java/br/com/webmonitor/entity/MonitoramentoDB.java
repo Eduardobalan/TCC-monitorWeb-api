@@ -22,11 +22,17 @@ public class MonitoramentoDB extends GenericEntity<Long>{
     @JoinColumn(name = "dbin_id")
     private InformacoesDB informacoesDB;
 
-    @Column(name = "dbmo_exito")
-    private Boolean exito;
+    @Column(name = "dbmo_exito_backup")
+    private int exitoBackup;
 
-    @Column(name = "dbmo_mensagem")
-    private String mensagem;
+    @Column(name = "dbmo_exito_vacuum")
+    private int exitoVacuum;
+
+    @Column(name = "dbmo_mensagem_backup")
+    private String mensagemBackup;
+
+    @Column(name = "dbmo_mensagem_vacuum")
+    private String mensagemVacuum;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "dbmo_dthr_cadastro")
@@ -48,20 +54,36 @@ public class MonitoramentoDB extends GenericEntity<Long>{
         this.informacoesDB = informacoesDB;
     }
 
-    public Boolean getExito() {
-        return exito;
+    public int getExitoBackup() {
+        return exitoBackup;
     }
 
-    public void setExito(Boolean exito) {
-        this.exito = exito;
+    public void setExitoBackup(int exitoBackup) {
+        this.exitoBackup = exitoBackup;
     }
 
-    public String getMensagem() {
-        return mensagem;
+    public int getExitoVacuum() {
+        return exitoVacuum;
     }
 
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
+    public void setExitoVacuum(int exitoVacuum) {
+        this.exitoVacuum = exitoVacuum;
+    }
+
+    public String getMensagemBackup() {
+        return mensagemBackup;
+    }
+
+    public void setMensagemBackup(String mensagemBackup) {
+        this.mensagemBackup = mensagemBackup;
+    }
+
+    public String getMensagemVacuum() {
+        return mensagemVacuum;
+    }
+
+    public void setMensagemVacuum(String mensagemVacuum) {
+        this.mensagemVacuum = mensagemVacuum;
     }
 
     public Date getDthr_cadastro() {

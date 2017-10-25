@@ -88,15 +88,15 @@ public class ServidorConfigServerTest extends GenericTest {
                 .content("{ " +
                         " \"nome\" : \"Novo Registro\" ," +
                         " \"servidor\":{\"id\":2}," +
-                        " \"dthr_cadastro\" : \"2017-02-28T04:00:00.000+0000\" ," +
-                        " \"dthr_alteracao\" : \"2017-02-28T04:00:00.000+0000\" ," +
+                        //" \"dthr_cadastro\" : \"2017-02-28T04:00:00.000+0000\" ," +
+                        //" \"dthr_alteracao\" : \"2017-02-28T04:00:00.000+0000\" ," +
                         " \"intervaloMemoria\" : 100 ," +
                         " \"intervaloCpu\" : 150 }"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(4)))
                 .andExpect(jsonPath("$.servidor.id", is(2)))
-                .andExpect(jsonPath("$.dthr_alteracao", is("2017-02-28T04:00:00.000+0000")))
-                .andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")))
+                //.andExpect(jsonPath("$.dthr_alteracao", is("2017-02-28T04:00:00.000+0000")))
+                //.andExpect(jsonPath("$.dthr_cadastro", is("2017-02-28T04:00:00.000+0000")))
                 .andExpect(jsonPath("$.intervaloMemoria", is(100)))
                 .andExpect(jsonPath("$.intervaloCpu", is(150)));
     }
