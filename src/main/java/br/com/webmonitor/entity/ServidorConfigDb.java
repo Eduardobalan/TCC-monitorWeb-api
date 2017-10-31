@@ -10,7 +10,7 @@ import java.util.Date;
  * Created by Eduardo Balan on 01/09/2017.
  */
 @Entity
-@Table(name = "tb_servidor_config_db_scdb_id_seq", schema = "public")
+@Table(name = "tb_servidor_config_db", schema = "public")
 @SequenceGenerator(name = "tb_servidor_config_db_scdb_id_seq", sequenceName = "public.tb_servidor_config_db_scdb_id_seq")
 public class ServidorConfigDb extends GenericEntity<Long>{
 
@@ -31,6 +31,7 @@ public class ServidorConfigDb extends GenericEntity<Long>{
     @Column(name = "scdb_dthr_alteracao")
     private Date dthr_alteracao;
 
+    @Enumerated(value = EnumType.STRING)
     @Column(name = "scdb_nome_sgdb")
     private EnumSgdb nomeSgdb;
 
