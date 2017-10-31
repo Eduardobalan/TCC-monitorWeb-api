@@ -11,54 +11,54 @@ import java.util.Date;
  */
 @Entity
 //@DynamicUpdate
-@Table(name = "tb_informacoes_db", schema = "public")
-@SequenceGenerator(name = "tb_informacoes_db_dbin_id_seq", sequenceName = "public.tb_informacoes_db_dbin_id_seq")
-public class InformacoesDB extends GenericEntity<Long>{
+@Table(name = "tb_informacoes_postgres", schema = "public")
+@SequenceGenerator(name = "tb_informacoes_postgres_dbip_id_seq", sequenceName = "public.tb_informacoes_postgres_dbip_id_seq")
+public class InformacoesPostgres extends GenericEntity<Long>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_informacoes_db_dbin_id_seq")
-    @Column(name = "dbin_id")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_informacoes_postgres_dbip_id_seq")
+    @Column(name = "dbip_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "serv_id")
     private Servidor servidor;
 
-    @Column(name = "dbin_listen_addresses")
+    @Column(name = "dbip_listen_addresses")
     private String listenAddresses;
 
-    @Column(name = "dbin_port")
+    @Column(name = "dbip_port")
     private String port;
 
-    @Column(name = "dbin_max_connections")
+    @Column(name = "dbip_max_connections")
     private String maxConnections;
 
-    @Column(name = "dbin_ssl")
+    @Column(name = "dbip_ssl")
     private String ssl;
 
-    @Column(name = "dbin_shared_buffers")
+    @Column(name = "dbip_shared_buffers")
     private String sharedBuffers;
 
-    @Column(name = "dbin_temp_buffers")
+    @Column(name = "dbip_temp_buffers")
     private String tempBuffers;
 
-    @Column(name = "dbin_work_mem")
+    @Column(name = "dbip_work_mem")
     private String workMem;
 
-    @Column(name = "dbin_maintenance_work_mem")
+    @Column(name = "dbip_maintenance_work_mem")
     private String maintenanceWorkMem;
 
-    @Column(name = "dbin_replacement_wort_tuples")
+    @Column(name = "dbip_replacement_wort_tuples")
     private String replacementWortTuples;
 
-    @Column(name = "dbin_max_stack_depth")
+    @Column(name = "dbip_max_stack_depth")
     private String maxStackDepth;
 
-    @Column(name = "dbin_max_prepared_transactions")
+    @Column(name = "dbip_max_prepared_transactions")
     private String maxPreparedTransactions;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "dbin_dthr_cadastro")
+    @Column(name = "dbip_dthr_cadastro")
     private Date dthr_cadastro;
 
     public Long getId() {
