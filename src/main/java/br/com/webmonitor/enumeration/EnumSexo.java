@@ -10,7 +10,7 @@ public enum EnumSexo {
 
     private String sexo;
 
-    private EnumSexo(String sexo) {
+    EnumSexo(String sexo) {
         this.sexo = sexo;
     }
 

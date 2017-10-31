@@ -1,8 +1,6 @@
 package br.com.webmonitor.repository;
 
-import br.com.webmonitor.entity.InformacoesCpu;
 import br.com.webmonitor.entity.MonitoramentoCpu;
-import br.com.webmonitor.entity.MonitoramentoDB;
 import br.com.webmonitor.repository.Generic.MonitoramentoGenericRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
