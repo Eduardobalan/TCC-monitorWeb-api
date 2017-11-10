@@ -35,6 +35,9 @@ public class ServidorConfig extends GenericEntity<Long>{
     @Column(name = "serc_intervalo_leitura_configuracoes", columnDefinition = "integer default 100")
     private Long intervaloLeituraConfiguracoes;
 
+    @Column(name = "serc_intervalo_leitura_configuracoes_db", columnDefinition = "integer default 100")
+    private Long intervaloLeituraConfiguracoesDb;
+
     @Column(name = "serc_intervalo_cpu", columnDefinition = "integer default 10")
     private Long intervaloCpu;
 
@@ -149,6 +152,14 @@ public class ServidorConfig extends GenericEntity<Long>{
 
     public void setIntervaloLeituraConfiguracoes(Long intervaloLeituraConfiguracoes) {
         this.intervaloLeituraConfiguracoes = intervaloLeituraConfiguracoes;
+    }
+
+    public Long getIntervaloLeituraConfiguracoesDb() {
+        return intervaloLeituraConfiguracoesDb;
+    }
+
+    public void setIntervaloLeituraConfiguracoesDb(Long intervaloLeituraConfiguracoesDb) {
+        this.intervaloLeituraConfiguracoesDb = intervaloLeituraConfiguracoesDb;
     }
 
     public Long getPorta() {

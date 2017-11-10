@@ -20,8 +20,8 @@ public class MonitoramentoPostgres extends GenericEntity<Long>{
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "dbip_id")
-    private InformacoesPostgres informacoesPostgres;
+    @JoinColumn(name = "scdb_id")
+    private ServidorConfigDb servidorConfigDb;
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "dbmp_tipo_execucao",  nullable = false)
@@ -45,12 +45,12 @@ public class MonitoramentoPostgres extends GenericEntity<Long>{
         this.id = id;
     }
 
-    public InformacoesPostgres getInformacoesPostgres() {
-        return informacoesPostgres;
+    public ServidorConfigDb getServidorConfigDb() {
+        return servidorConfigDb;
     }
 
-    public void setInformacoesPostgres(InformacoesPostgres informacoesPostgres) {
-        this.informacoesPostgres = informacoesPostgres;
+    public void setServidorConfigDb(ServidorConfigDb servidorConfigDb) {
+        this.servidorConfigDb = servidorConfigDb;
     }
 
     public EnumSgdbTipoExec getTipoExecucao() {

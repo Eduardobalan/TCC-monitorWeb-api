@@ -2,6 +2,7 @@ package br.com.webmonitor.entity;
 
 import br.com.webmonitor.entity.Generic.GenericEntity;
 import br.com.webmonitor.enumeration.EnumSgdb;
+import br.com.webmonitor.enumeration.EnumSgdbTipoExec;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -41,11 +42,21 @@ public class ServidorConfigDb extends GenericEntity<Long>{
     @Column(name = "scdb_path_main")
     private String pathMain;
 
-    @Column(name = "scdb_porta")
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "scdb_tipo_exec")
+    private EnumSgdbTipoExec sgdbTipoExec;
+
+    @Column(name = "scdb_ip", columnDefinition = "character varying default 127.0.0.1")
+    private String ip;
+
+    @Column(name = "scdb_porta", columnDefinition = "character varying default 5432")
     private Long porta;
 
     @Column(name = "scdb_versao")
     private String versao;
+
+    @Column(name = "scdb_intervalo_exec", columnDefinition = "integer default 3600")
+    private Long intervaloExec;
 
     // Getter and Setter
     @Override
@@ -108,6 +119,14 @@ public class ServidorConfigDb extends GenericEntity<Long>{
         this.pathMain = pathMain;
     }
 
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     public Long getPorta() {
         return porta;
     }
@@ -122,5 +141,21 @@ public class ServidorConfigDb extends GenericEntity<Long>{
 
     public void setVersao(String versao) {
         this.versao = versao;
+    }
+
+    public Long getIntervaloExec() {
+        return intervaloExec;
+    }
+
+    public void setIntervaloExec(Long intervaloExec) {
+        this.intervaloExec = intervaloExec;
+    }
+
+    public EnumSgdbTipoExec getSgdbTipoExec() {
+        return sgdbTipoExec;
+    }
+
+    public void setSgdbTipoExec(EnumSgdbTipoExec sgdbTipoExec) {
+        this.sgdbTipoExec = sgdbTipoExec;
     }
 }
