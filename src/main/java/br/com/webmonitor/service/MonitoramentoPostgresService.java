@@ -4,7 +4,10 @@ import br.com.webmonitor.business.MonitoramentoPostgresBO;
 import br.com.webmonitor.entity.MonitoramentoPostgres;
 import br.com.webmonitor.repository.MonitoramentoPostgresRepository;
 import br.com.webmonitor.service.Generic.MonitoramentoGenericService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by Eduardo Balan on 07/07/2017.

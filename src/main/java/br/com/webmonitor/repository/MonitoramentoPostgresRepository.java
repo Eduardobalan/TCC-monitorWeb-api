@@ -13,6 +13,6 @@ import java.util.List;
 public interface MonitoramentoPostgresRepository extends MonitoramentoGenericRepository<MonitoramentoPostgres, Long> {
 
     @Override
-    @Query("SELECT mon FROM MonitoramentoPostgres mon WHERE mon.informacoesPostgres.id = ?1")
-    List<MonitoramentoPostgres> findByidInformacoes(@Param("idInformacoes") Long idInformacoes);
+    @Query("SELECT mon FROM MonitoramentoPostgres mon WHERE mon.servidorConfigDb.id = ?1")
+    List<MonitoramentoPostgres> findByidInformacoes(@Param("idServidorConfigDb") Long idServidorConfigDb);
 }
