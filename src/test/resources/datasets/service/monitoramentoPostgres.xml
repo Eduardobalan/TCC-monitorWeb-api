@@ -6,50 +6,12 @@
     <TB_SERVIDOR serv_id="2" domi_id="1" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor2" serv_empresa="Emp2" serv_observacao="obs2"/>
     <TB_SERVIDOR serv_id="3" domi_id="2" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor3" serv_empresa="Emp3" serv_observacao="obs3"/>
 
+    <TB_SERVIDOR_CONFIG_DB scdb_id="1" serv_id="1" scdb_dthr_cadastro="2017-02-28 00:00:00.000" scdb_dthr_alteracao="2017-02-28 00:00:00.000" scdb_nome_sgdb="POSTGRESQL" scdb_nome_db="SACVET_ESTOQUE" scdb_path_main="/etc/postgres/9.6/main" scdb_porta="5432" scdb_versao="9.6" scdb_ip="127.0.0.1" scdb_intervalo_exec="3600" scdb_tipo_exec="BACKUP" scdb_ativo="TRUE"/>
+    <TB_SERVIDOR_CONFIG_DB scdb_id="2" serv_id="1" scdb_dthr_cadastro="2017-02-28 00:00:00.000" scdb_dthr_alteracao="2017-02-28 00:00:00.000" scdb_nome_sgdb="POSTGRESQL" scdb_nome_db="SACVET_ESTOQUE" scdb_path_main="/etc/postgres/9.1/main" scdb_porta="5433" scdb_versao="9.1" scdb_ip="192.168.1.10" scdb_intervalo_exec="7200" scdb_tipo_exec="VACUUM" scdb_ativo="TRUE"/>
+    <TB_SERVIDOR_CONFIG_DB scdb_id="3" serv_id="3" scdb_dthr_cadastro="2017-02-28 00:00:00.000" scdb_dthr_alteracao="2017-02-28 00:00:00.000" scdb_nome_sgdb="POSTGRESQL" scdb_nome_db="DBCOMPAFLOC"    scdb_path_main="/etc/postgres/8.4/main" scdb_porta="5434" scdb_versao="8.4" scdb_ip="201.10.128.3" scdb_intervalo_exec="14400" scdb_tipo_exec="VACUUM" scdb_ativo="FALSE"/>
 
-    <TB_INFORMACOES_POSTGRES dbip_id="1" serv_id="1"
-                             dbip_listen_addresses="*"
-                             dbip_port="5432"
-                             dbip_max_connections="100"
-                             dbip_ssl="true"
-                             dbip_shared_buffers="128MB"
-                             dbip_temp_buffers="8MB"
-                             dbip_work_mem="4MB"
-                             dbip_maintenance_work_mem="64MB"
-                             dbip_replacement_wort_tuples="true"
-                             dbip_max_stack_depth="2MB"
-                             dbip_max_prepared_transactions="0"
-                             dbip_dthr_cadastro="2017-02-28 00:00:00.000"/>
-
-    <TB_INFORMACOES_POSTGRES dbip_id="2" serv_id="1"
-                             dbip_listen_addresses="*"
-                             dbip_port="5433"
-                             dbip_max_connections="200"
-                             dbip_ssl="false"
-                             dbip_shared_buffers="256MB"
-                             dbip_temp_buffers="16MB"
-                             dbip_work_mem="8MB"
-                             dbip_maintenance_work_mem="128MB"
-                             dbip_replacement_wort_tuples="false"
-                             dbip_max_stack_depth="4MB"
-                             dbip_max_prepared_transactions="2"
-                             dbip_dthr_cadastro="2017-02-29 00:00:00.000"/>
-    <TB_INFORMACOES_POSTGRES dbip_id="3" serv_id="3"
-                             dbip_listen_addresses="*"
-                             dbip_port="5434"
-                             dbip_max_connections="50"
-                             dbip_ssl="true"
-                             dbip_shared_buffers="64MB"
-                             dbip_temp_buffers="4MB"
-                             dbip_work_mem="2MB"
-                             dbip_maintenance_work_mem="32MB"
-                             dbip_replacement_wort_tuples="false"
-                             dbip_max_stack_depth="1MB"
-                             dbip_max_prepared_transactions="1"
-                             dbip_dthr_cadastro="2017-03-25 00:00:00.000"/>
-
-    <TB_MONITORAMENTO_POSTGRES dbmp_id="1" dbip_id="1" dbmp_tipo_execucao="BACKUP" dbmp_exito="0" dbmp_mensagem="Completado com sucesso" dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
-    <TB_MONITORAMENTO_POSTGRES dbmp_id="2" dbip_id="1" dbmp_tipo_execucao="BACKUP" dbmp_exito="233" dbmp_mensagem="Erro ao executar." dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
-    <TB_MONITORAMENTO_POSTGRES dbmp_id="3" dbip_id="2" dbmp_tipo_execucao="VACUUM" dbmp_exito="0"   dbmp_mensagem="Completado com sucesso"  dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
-    <TB_MONITORAMENTO_POSTGRES dbmp_id="4" dbip_id="3" dbmp_tipo_execucao="VACUUM" dbmp_exito="0"   dbmp_mensagem="Completado com sucesso"  dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_POSTGRES dbmp_id="1" scdb_id="1" dbmp_tipo_execucao="BACKUP" dbmp_exito="0" dbmp_mensagem="Completado com sucesso" dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_POSTGRES dbmp_id="2" scdb_id="1" dbmp_tipo_execucao="BACKUP" dbmp_exito="233" dbmp_mensagem="Erro ao executar." dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_POSTGRES dbmp_id="3" scdb_id="2" dbmp_tipo_execucao="VACUUM" dbmp_exito="0"   dbmp_mensagem="Completado com sucesso"  dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_POSTGRES dbmp_id="4" scdb_id="3" dbmp_tipo_execucao="VACUUM" dbmp_exito="0"   dbmp_mensagem="Completado com sucesso"  dbmp_dthr_cadastro="2017-02-28 00:00:00.000"/>
 </dataset>

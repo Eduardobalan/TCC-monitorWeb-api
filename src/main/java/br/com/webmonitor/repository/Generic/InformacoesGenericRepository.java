@@ -18,6 +18,4 @@ public interface InformacoesGenericRepository<Entity, IdType extends Serializabl
 
     List<Entity> findByServidor(Servidor Servidor);
 
-//    @Query("SELECT s FROM  Servidor where s.serv_id = ?1")
-//    Servidor findServidor(Long id);
 }

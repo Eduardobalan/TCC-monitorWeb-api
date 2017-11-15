@@ -11,18 +11,18 @@ import java.util.Date;
  */
 @Entity
 //@DynamicUpdate
-@Table(name = "tb_informacoes_postgres", schema = "public")
-@SequenceGenerator(name = "tb_informacoes_postgres_dbip_id_seq", sequenceName = "public.tb_informacoes_postgres_dbip_id_seq")
-public class InformacoesPostgres extends GenericEntity<Long>{
+@Table(name = "tb_monitoramento_postgres_informacoes", schema = "public")
+@SequenceGenerator(name = "tb_monitoramento_postgres_informacoes_dbip_id_seq", sequenceName = "public.tb_monitoramento_postgres_informacoes_dbip_id_seq")
+public class MonitoramentoPostgresInformacoes extends GenericEntity<Long>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_informacoes_postgres_dbip_id_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tb_monitoramento_postgres_informacoes_dbip_id_seq")
     @Column(name = "dbip_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "serv_id")
-    private Servidor servidor;
+    @JoinColumn(name = "scid_id")
+    private ServidorConfigInformacoesDb servidorConfigInformacoesDb;
 
     @Column(name = "dbip_listen_addresses")
     private String listenAddresses;
@@ -69,12 +69,12 @@ public class InformacoesPostgres extends GenericEntity<Long>{
         this.id = id;
     }
 
-    public Servidor getServidor() {
-        return servidor;
+    public ServidorConfigInformacoesDb getServidorConfigInformacoesDb() {
+        return servidorConfigInformacoesDb;
     }
 
-    public void setServidor(Servidor servidor) {
-        this.servidor = servidor;
+    public void setServidorConfigInformacoesDb(ServidorConfigInformacoesDb servidorConfigInformacoesDb) {
+        this.servidorConfigInformacoesDb = servidorConfigInformacoesDb;
     }
 
     public String getListenAddresses() {

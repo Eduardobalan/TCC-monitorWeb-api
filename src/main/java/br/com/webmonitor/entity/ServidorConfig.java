@@ -32,23 +32,20 @@ public class ServidorConfig extends GenericEntity<Long>{
     @Column(name = "serc_dthr_alteracao")
     private Date dthr_alteracao;
 
-    @Column(name = "serc_intervalo_leitura_configuracoes", columnDefinition = "integer default 100")
+    @Column(name = "serc_intervalo_leitura_configuracoes", columnDefinition = "integer default 60")
     private Long intervaloLeituraConfiguracoes;
 
-    @Column(name = "serc_intervalo_leitura_configuracoes_db", columnDefinition = "integer default 100")
+    @Column(name = "serc_intervalo_leitura_configuracoes_db", columnDefinition = "integer default 60")
     private Long intervaloLeituraConfiguracoesDb;
 
-    @Column(name = "serc_intervalo_cpu", columnDefinition = "integer default 10")
+    @Column(name = "serc_intervalo_cpu", columnDefinition = "integer default 1")
     private Long intervaloCpu;
 
-    @Column(name = "serc_intervalo_mem", columnDefinition = "integer default 10")
+    @Column(name = "serc_intervalo_mem", columnDefinition = "integer default 1")
     private Long intervaloMemoria;
 
-    @Column(name = "serc_intervalo_swap", columnDefinition = "integer default 10")
+    @Column(name = "serc_intervalo_swap", columnDefinition = "integer default 1")
     private Long intervaloSwap;
-
-    @Column(name = "serc_intervalo_db", columnDefinition = "integer default 10")
-    private Long intervaloDB;
 
     @Column(name = "serc_host_monitoramento")
     private String hostMonitoramento;
@@ -120,14 +117,6 @@ public class ServidorConfig extends GenericEntity<Long>{
 
     public void setIntervaloSwap(Long intervaloSwap) {
         this.intervaloSwap = intervaloSwap;
-    }
-
-    public Long getIntervaloDB() {
-        return intervaloDB;
-    }
-
-    public void setIntervaloDB(Long intervaloDB) {
-        this.intervaloDB = intervaloDB;
     }
 
     public String getHostMonitoramento() {
