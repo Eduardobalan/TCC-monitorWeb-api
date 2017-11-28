@@ -23,8 +23,8 @@ public class MonitoramentoCpu extends GenericEntity<Long>{
     @JoinColumn(name = "cpui_id")
     private InformacoesCpu informacoesCpu;
 
-    @Column(name = "cpum_numero_nucleo")
-    private Long numeroNucleo;
+    @Column(name = "cpum_core_id")
+    private Long coreId;
 
     @Column(name = "cpum_cpu_mhz")
     private Long cpuMhz;
@@ -49,12 +49,12 @@ public class MonitoramentoCpu extends GenericEntity<Long>{
         this.informacoesCpu = informacoesCpu;
     }
 
-    public Long getNumeroNucleo() {
-        return numeroNucleo;
+    public Long getCoreId() {
+        return coreId;
     }
 
-    public void setNumeroNucleo(Long numeroNucleo) {
-        this.numeroNucleo = numeroNucleo;
+    public void setCoreId(Long coreId) {
+        this.coreId = coreId;
     }
 
     public Long getCpuMhz() {

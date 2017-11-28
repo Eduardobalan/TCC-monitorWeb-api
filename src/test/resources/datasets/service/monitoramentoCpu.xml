@@ -10,9 +10,9 @@
     <TB_INFORMACOES_CPU cpui_id="2" serv_id="1" cpui_nome="I5" cpui_cache_size="256" cpui_cpu_cores="4" cpui_siblings="8" cpui_dthr_cadastro="2017-02-28 00:00:00.000"/>
     <TB_INFORMACOES_CPU cpui_id="3" serv_id="3" cpui_nome="I3" cpui_cache_size="128" cpui_cpu_cores="2" cpui_siblings="2" cpui_dthr_cadastro="2017-02-28 00:00:00.000"/>
 
-    <TB_MONITORAMENTO_CPU cpum_id="1" cpui_id="1" cpum_numero_nucleo="16" cpum_cpu_mhz="3200"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
-    <TB_MONITORAMENTO_CPU cpum_id="2" cpui_id="1" cpum_numero_nucleo="8" cpum_cpu_mhz="2400"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
-    <TB_MONITORAMENTO_CPU cpum_id="3" cpui_id="2" cpum_numero_nucleo="4" cpum_cpu_mhz="1600"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
-    <TB_MONITORAMENTO_CPU cpum_id="4" cpui_id="3" cpum_numero_nucleo="2" cpum_cpu_mhz="1200"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_CPU cpum_id="1" cpui_id="1" cpum_core_id="16" cpum_cpu_mhz="3200"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_CPU cpum_id="2" cpui_id="1" cpum_core_id="8" cpum_cpu_mhz="2400"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_CPU cpum_id="3" cpui_id="2" cpum_core_id="4" cpum_cpu_mhz="1600"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
+    <TB_MONITORAMENTO_CPU cpum_id="4" cpui_id="3" cpum_core_id="2" cpum_cpu_mhz="1200"  cpum_dthr_cadastro="2017-02-28 00:00:00.000"/>
 
 </dataset>
