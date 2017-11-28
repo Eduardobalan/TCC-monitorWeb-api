@@ -6,7 +6,12 @@
     <TB_SERVIDOR serv_id="2" domi_id="1" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor2" serv_empresa="Emp2" serv_observacao="obs2"/>
     <TB_SERVIDOR serv_id="3" domi_id="2" serv_dthr_cadastro="2017-02-28 00:00:00.000" serv_nome="Servidor3" serv_empresa="Emp3" serv_observacao="obs3"/>
 
-    <TB_INFORMACOES_POSTGRES dbip_id="1" serv_id="1"
+    <TB_SERVIDOR_CONFIG_INFORMACOES_DB scid_id="1" serv_id="1" scid_dthr_cadastro="2017-02-28 00:00:00.000" scid_dthr_alteracao="2017-02-28 00:00:00.000" scid_nome_sgdb="POSTGRESQL"  scid_path_main="/etc/postgres/9.6/main" scid_intervalo_exec="3600" scid_ativo="TRUE" />
+    <TB_SERVIDOR_CONFIG_INFORMACOES_DB scid_id="2" serv_id="1" scid_dthr_cadastro="2017-02-28 00:00:00.000" scid_dthr_alteracao="2017-02-28 00:00:00.000" scid_nome_sgdb="POSTGRESQL"  scid_path_main="/etc/postgres/9.1/main"  scid_intervalo_exec="7200" scid_ativo="TRUE" />
+    <TB_SERVIDOR_CONFIG_INFORMACOES_DB scid_id="3" serv_id="3" scid_dthr_cadastro="2017-02-28 00:00:00.000" scid_dthr_alteracao="2017-02-28 00:00:00.000" scid_nome_sgdb="POSTGRESQL"  scid_path_main="/etc/postgres/8.4/main"   scid_intervalo_exec="14400" scid_ativo="FALSE" />
+
+
+    <TB_MONITORAMENTO_POSTGRES_INFORMACOES dbip_id="1" scid_id="1"
                              dbip_listen_addresses="*"
                              dbip_port="5432"
                              dbip_max_connections="100"
@@ -20,7 +25,7 @@
                              dbip_max_prepared_transactions="0"
                              dbip_dthr_cadastro="2017-02-28 00:00:00.000"/>
 
-    <TB_INFORMACOES_POSTGRES dbip_id="2" serv_id="1"
+    <TB_MONITORAMENTO_POSTGRES_INFORMACOES dbip_id="2" scid_id="1"
                              dbip_listen_addresses="*"
                              dbip_port="5433"
                              dbip_max_connections="200"
@@ -33,7 +38,8 @@
                              dbip_max_stack_depth="4MB"
                              dbip_max_prepared_transactions="2"
                              dbip_dthr_cadastro="2017-02-29 00:00:00.000"/>
-    <TB_INFORMACOES_POSTGRES dbip_id="3" serv_id="3"
+
+    <TB_MONITORAMENTO_POSTGRES_INFORMACOES dbip_id="3" scid_id="3"
                              dbip_listen_addresses="*"
                              dbip_port="5434"
                              dbip_max_connections="50"

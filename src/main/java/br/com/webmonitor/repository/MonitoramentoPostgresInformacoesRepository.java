@@ -15,5 +15,5 @@ public interface MonitoramentoPostgresInformacoesRepository extends Monitorament
 
     @Override
     @Query("SELECT inf FROM MonitoramentoPostgresInformacoes inf WHERE inf.servidorConfigInformacoesDb.id = ?1")
-    List<MonitoramentoPostgresInformacoes> findByidInformacoes(@Param("idServidorConfigInformacoesDb") Long idServidorConfigInformacoesDb);
+    List<MonitoramentoPostgresInformacoes> findByidInformacoes(Long id);
 }

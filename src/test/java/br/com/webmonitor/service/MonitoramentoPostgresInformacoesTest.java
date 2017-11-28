@@ -25,10 +25,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Created by Eduardo Balan on 27/06/2017.
  */
 
-@DatabaseSetup(value = InformacoesPostgresServerTest.DATASET, type = DatabaseOperation.INSERT)
-public class InformacoesPostgresServerTest extends GenericTest {
+@DatabaseSetup(value = MonitoramentoPostgresInformacoesTest.DATASET, type = DatabaseOperation.INSERT)
+public class MonitoramentoPostgresInformacoesTest extends GenericTest {
 
-    protected static final String DATASET = "classpath:/datasets/service/informacoesPostgres.xml";
+    protected static final String DATASET = "classpath:/datasets/service/MonitoramentoPostgresInformacoes.xml";
 
     @Resource
     private WebApplicationContext webApplicationContext;
@@ -43,11 +43,11 @@ public class InformacoesPostgresServerTest extends GenericTest {
 
     @Test
     public void buscarTodosTest() throws Exception {
-        mockMvc.perform(get("/servidor/0/informacoespostgres"))
+        mockMvc.perform(get("/servidor/informacoes/0/monitoramentopostgresinformacoes"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].id", is(1)))
-                .andExpect(jsonPath("$[0].servidor.id", is(1)))
+                .andExpect(jsonPath("$[0].servidorConfigInformacoesDb.id", is(1)))
                 .andExpect(jsonPath("$[0].listenAddresses", is("*")))
                 .andExpect(jsonPath("$[0].port", is("5432")))
                 .andExpect(jsonPath("$[0].maxConnections", is("100")))
@@ -61,18 +61,18 @@ public class InformacoesPostgresServerTest extends GenericTest {
                 .andExpect(jsonPath("$[0].maxPreparedTransactions", is("0")))
                 .andExpect(jsonPath("$[0].dthr_cadastro", is("2017-02-28T04:00:00.000+0000")))
                 .andExpect(jsonPath("$[1].id", is(2)))
-                .andExpect(jsonPath("$[1].servidor.id", is(1)))
+                .andExpect(jsonPath("$[1].servidorConfigInformacoesDb.id", is(1)))
                 .andExpect(jsonPath("$[2].id", is(3)))
-                .andExpect(jsonPath("$[2].servidor.id", is(3)));
+                .andExpect(jsonPath("$[2].servidorConfigInformacoesDb.id", is(3)));
     }
 
     @Test
     public void buscarTodosPorServidorTest() throws Exception {
-        mockMvc.perform(get("/servidor/1/informacoespostgres"))
+        mockMvc.perform(get("/servidor/informacoes/1/monitoramentopostgresinformacoes"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id", is(1)))
-                .andExpect(jsonPath("$[0].servidor.id", is(1)))
+                .andExpect(jsonPath("$[0].servidorConfigInformacoesDb.id", is(1)))
                 .andExpect(jsonPath("$[0].listenAddresses", is("*")))
                 .andExpect(jsonPath("$[0].port", is("5432")))
                 .andExpect(jsonPath("$[0].maxConnections", is("100")))
@@ -86,15 +86,15 @@ public class InformacoesPostgresServerTest extends GenericTest {
                 .andExpect(jsonPath("$[0].maxPreparedTransactions", is("0")))
                 .andExpect(jsonPath("$[0].dthr_cadastro", is("2017-02-28T04:00:00.000+0000")))
                 .andExpect(jsonPath("$[1].id", is(2)))
-                .andExpect(jsonPath("$[1].servidor.id", is(1)));
+                .andExpect(jsonPath("$[1].servidorConfigInformacoesDb.id", is(1)));
     }
 
     @Test
     public void buscarPorIdTest() throws Exception {
-        mockMvc.perform(get("/servidor/0/informacoespostgres/1"))
+        mockMvc.perform(get("/servidor/informacoes/0/monitoramentopostgresinformacoes/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.servidor.id", is(1)))
+                .andExpect(jsonPath("$.servidorConfigInformacoesDb.id", is(1)))
                 .andExpect(jsonPath("$.listenAddresses", is("*")))
                 .andExpect(jsonPath("$.port", is("5432")))
                 .andExpect(jsonPath("$.maxConnections", is("100")))
@@ -112,9 +112,9 @@ public class InformacoesPostgresServerTest extends GenericTest {
     @Test
     public void inserirTest() throws Exception {
 
-        mockMvc.perform(post("/servidor/0/informacoespostgres/").contentType(MediaType.APPLICATION_JSON_UTF8)
+        mockMvc.perform(post("/servidor/informacoes/0/monitoramentopostgresinformacoes").contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content("{ " +
-                        " \"servidor\":{\"id\":2}," +
+                        " \"servidorConfigInformacoesDb\":{\"id\":2}," +
                         " \"listenAddresses\" : \"*\"," +
                         " \"port\" : \"5432\"," +
                         " \"maxConnections\" : \"100\"," +
@@ -130,7 +130,7 @@ public class InformacoesPostgresServerTest extends GenericTest {
                         "}"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(4)))
-                .andExpect(jsonPath("$.servidor.id", is(2)))
+                .andExpect(jsonPath("$.servidorConfigInformacoesDb.id", is(2)))
                 .andExpect(jsonPath("$.listenAddresses", is("*")))
                 .andExpect(jsonPath("$.port", is("5432")))
                 .andExpect(jsonPath("$.maxConnections", is("100")))
@@ -147,10 +147,10 @@ public class InformacoesPostgresServerTest extends GenericTest {
 
     @Test
     public void deletarTest() throws Exception {
-        mockMvc.perform(delete("/servidor/0/informacoespostgres/3"))
+        mockMvc.perform(delete("/servidor/informacoes/0/monitoramentopostgresinformacoes/3"))
                 .andExpect(status().isOk());
 
-        mockMvc.perform(get("/servidor/0/informacoespostgres/"))
+        mockMvc.perform(get("/servidor/informacoes/0/monitoramentopostgresinformacoes"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id", is(1)))
@@ -162,23 +162,12 @@ public class InformacoesPostgresServerTest extends GenericTest {
     @Test
     public void deletarIdInexistenteTest() throws Exception {
 
-        Exception expt = mockMvc.perform(delete("/servidor/0/informacoespostgres/999999"))
+        Exception expt = mockMvc.perform(delete("/servidor/informacoes/0/monitoramentopostgresinformacoes/999999"))
                 .andExpect(status().isInternalServerError())
                 .andReturn().getResolvedException();
 
         Assert.assertTrue(expt.getClass().isAssignableFrom(SqlInexistenteRuntimeException.class));
         Assert.assertTrue(expt.getMessage().equals("Registro não encontrado na base de dados."));
-    }
-
-    @Test
-    public void buscarIdInexistenteServidorTest() throws Exception {
-
-        Exception expt =  mockMvc.perform(get("/servidor/99999999/informacoespostgres"))
-                .andExpect(status().isInternalServerError())
-                .andReturn().getResolvedException();
-
-        Assert.assertTrue(expt.getClass().isAssignableFrom(SqlInexistenteRuntimeException.class));
-        Assert.assertTrue(expt.getMessage().equals("Servidor não localizado."));
     }
 }
 
