@@ -3,12 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>br.com.webmonitor</groupId>
-    <artifactId>TCC-MonitorWeb</artifactId>
-    <version>0.0.1</version>
-    <packaging>war</packaging>
+    <groupId>br.com.monitorweb</groupId>
+    <artifactId>MonitorWeb-Api</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
-    <name>TCC-MonitorWeb</name>
+    <name>MonitorWeb-Api</name>
     <description>API restful</description>
 
 
