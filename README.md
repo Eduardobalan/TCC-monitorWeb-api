@@ -1,4 +1,13 @@
 
+# Projeto Descontinuado.
+# O novo projeto pode ser encontrado em:
+
+ https://github.com/Eduardobalan/MonitorWeb-api 
+ https://github.com/Eduardobalan/MonitorWeb-cli 
+
+--------------------------------------------------------------
+
+
 A documentação completa deste projeto pode ser encontrado em https://github.com/Eduardobalan/TCC-monitorWeb-Doc-Latex/blob/master/tcc.pdf
 
 # TCC-monitorWeb
